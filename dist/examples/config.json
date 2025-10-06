@@ -1,0 +1,29 @@
+{
+  "title": "FOAF Sample",
+  "maxNodes": 40,
+  "hidePredicates": [
+    "rdf:type",
+    "rdfs:label"
+  ],
+  "collapseLiterals": true,
+  "mergeParallelEdges": true,
+  "groupByType": [
+    "foaf:Person"
+  ],
+  "nodeLabel": "rdfs:label|foaf:name|@id",
+  "edgeLabel": "@predicate",
+  "layout": {
+    "elk.algorithm": "layered",
+    "elk.direction": "RIGHT"
+  },
+  "filters": {
+    "subjects": [
+      "http://example.org/alice"
+    ],
+    "predicates": [
+      "foaf:knows",
+      "foaf:name"
+    ],
+    "objects": []
+  }
+}

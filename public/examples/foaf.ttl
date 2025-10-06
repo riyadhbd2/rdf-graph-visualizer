@@ -1,0 +1,17 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex:   <http://example.org/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:alice a foaf:Person ;
+  foaf:name "Alice" ;
+  foaf:knows ex:bob ;
+  foaf:knows ex:carol .
+
+ex:bob a foaf:Person ;
+  foaf:name "Bob" ;
+  foaf:knows ex:carol .
+
+ex:carol a foaf:Person ;
+  foaf:name "Carol" ;
+  foaf:based_near "Leipzig" .
