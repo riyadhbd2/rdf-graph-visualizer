@@ -1,9 +1,16 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import GraphView from './GraphView.jsx'
 
-export default function OutputPanel({ graph, config, shaclReport, containerId, className = '' }) {
+export default function OutputPanel({
+  graph,
+  config,
+  shaclReport,
+  renderStats,
+  onMetrics,
+  containerId,
+  className = '',
+}) {
   const viewRef = useRef(null)
-  const [physicsEnabled, setPhysicsEnabled] = useState(true)
 
   return (
     <div className={`rounded-2xl bg-white/90 backdrop-blur border border-slate-200 shadow-xl p-4 ${className}`}>
@@ -34,28 +41,24 @@ export default function OutputPanel({ graph, config, shaclReport, containerId, c
             >
               Reset
             </button>
-            <button
-              type="button"
-              onClick={() => setPhysicsEnabled(prev => !prev)}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold border transition ${
-                physicsEnabled
-                  ? 'bg-amber-100 text-amber-800 border-amber-200 hover:bg-amber-200'
-                  : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'
-              }`}
-            >
-              {physicsEnabled ? 'Physics On' : 'Physics Off'}
-            </button>
           </div>
         </div>
       </div>
 
       <div id={containerId} className="overflow-auto border border-slate-200 rounded-xl bg-white shadow-inner" style={{ height: '70vh' }}>
         {graph ? (
-          <GraphView ref={viewRef} graph={graph} cfg={config} enablePhysics={physicsEnabled} />
+          <GraphView
+            ref={viewRef}
+            graph={graph}
+            cfg={config}
+            enablePhysics={Boolean(config?.exploreMode) && !config?.evaluationMode}
+            onMetrics={onMetrics}
+          />
         ) : (
           <div className="h-full grid place-items-center text-slate-400 text-sm">No graph yet</div>
         )}
       </div>
+
       {shaclReport ? (
         <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700">
           {shaclReport.conforms

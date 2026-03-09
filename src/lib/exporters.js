@@ -192,3 +192,8 @@ export async function exportSvgElement(svg, format, filenameBase = 'rdf-graph') 
       throw new Error(`Unsupported export format: ${format}`)
   }
 }
+
+export function exportTextFile(content, filename, mimeType = 'text/plain;charset=utf-8') {
+  const blob = new Blob([content], { type: mimeType })
+  downloadBlob(blob, filename)
+}

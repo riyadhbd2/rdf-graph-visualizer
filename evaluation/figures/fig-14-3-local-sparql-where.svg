@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1026" height="1288" viewBox="0 0 1026 1288">
+<rect x="0" y="0" width="1026" height="1288" fill="#0b1220"/>
+<rect x="0" y="0" width="1026" height="46" fill="#111a2b"/>
+<text x="18" y="29" font-family="Menlo, Consolas, Monaco, monospace" font-size="15" fill="#e2e8f0">Figure 17.3  Local SPARQL WHERE Parsing (sparqlLocal.js:38-90)</text>
+<rect x="0" y="46" width="80" height="1214" fill="#0f172a"/>
+<text x="56" y="70" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">38</text>
+<text x="88" y="70" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">function parseWhereTriples(query) {</text>
+<rect x="80" y="77" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="92" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">39</text>
+<text x="88" y="92" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const whereMatch = query.match(/WHERE\s*\{([\s\S]+?)\}/i)</text>
+<text x="56" y="114" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">40</text>
+<text x="88" y="114" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  if (!whereMatch) throw new Error(&#39;Unsupported SPARQL query: missing WHERE clause.&#39;)</text>
+<rect x="80" y="121" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="136" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">41</text>
+<text x="88" y="136" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const body = whereMatch[1]</text>
+<text x="56" y="158" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">42</text>
+<text x="88" y="158" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const withoutComments = body.replace(/#[^\n]*\n/g, &#39; &#39;).replace(/#[^\n]*$/g, &#39; &#39;)</text>
+<rect x="80" y="165" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="180" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">43</text>
+<text x="88" y="180" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  if (/(OPTIONAL|FILTER|UNION|GRAPH|MINUS|BIND|VALUES)\b/i.test(withoutComments)) {</text>
+<text x="56" y="202" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">44</text>
+<text x="88" y="202" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    throw new Error(&#39;Simple SPARQL filter supports basic triple patterns only (no OPTIONAL/FILTER/UNION).&#39;)</text>
+<rect x="80" y="209" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="224" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">45</text>
+<text x="88" y="224" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<text x="56" y="246" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">46</text>
+<text x="88" y="246" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const tokens = tokenize(withoutComments)</text>
+<rect x="80" y="253" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="268" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">47</text>
+<text x="88" y="268" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const entries = []</text>
+<text x="56" y="290" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">48</text>
+<text x="88" y="290" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="297" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="312" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">49</text>
+<text x="88" y="312" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  let i = 0</text>
+<text x="56" y="334" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">50</text>
+<text x="88" y="334" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  while (i &lt; tokens.length) {</text>
+<rect x="80" y="341" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="356" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">51</text>
+<text x="88" y="356" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const subjectToken = tokens[i++]</text>
+<text x="56" y="378" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">52</text>
+<text x="88" y="378" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    if (!subjectToken || subjectToken === &#39;.&#39; || subjectToken === &#39;;&#39; || subjectToken === &#39;,&#39;) continue</text>
+<rect x="80" y="385" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="400" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">53</text>
+<text x="88" y="400" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    if (i &gt;= tokens.length) break</text>
+<text x="56" y="422" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">54</text>
+<text x="88" y="422" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    let predicateToken = tokens[i++]</text>
+<rect x="80" y="429" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="444" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">55</text>
+<text x="88" y="444" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="466" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">56</text>
+<text x="88" y="466" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    while (i &lt; tokens.length) {</text>
+<rect x="80" y="473" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="488" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">57</text>
+<text x="88" y="488" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (!predicateToken || predicateToken === &#39;.&#39; || predicateToken === &#39;;&#39; || predicateToken === &#39;,&#39;) break</text>
+<text x="56" y="510" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">58</text>
+<text x="88" y="510" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const objectToken = tokens[i++]</text>
+<rect x="80" y="517" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="532" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">59</text>
+<text x="88" y="532" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (!objectToken || objectToken === &#39;.&#39; || objectToken === &#39;;&#39; || objectToken === &#39;,&#39;) {</text>
+<text x="56" y="554" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">60</text>
+<text x="88" y="554" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        break</text>
+<rect x="80" y="561" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="576" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">61</text>
+<text x="88" y="576" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      }</text>
+<text x="56" y="598" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">62</text>
+<text x="88" y="598" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      entries.push({</text>
+<rect x="80" y="605" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="620" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">63</text>
+<text x="88" y="620" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        subject: parseToken(subjectToken),</text>
+<text x="56" y="642" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">64</text>
+<text x="88" y="642" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        predicate: parseToken(predicateToken),</text>
+<rect x="80" y="649" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="664" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">65</text>
+<text x="88" y="664" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        object: parseToken(objectToken),</text>
+<text x="56" y="686" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">66</text>
+<text x="88" y="686" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      })</text>
+<rect x="80" y="693" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="708" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">67</text>
+<text x="88" y="708" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="730" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">68</text>
+<text x="88" y="730" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const separator = tokens[i]</text>
+<rect x="80" y="737" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="752" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">69</text>
+<text x="88" y="752" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (separator === &#39;,&#39;) {</text>
+<text x="56" y="774" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">70</text>
+<text x="88" y="774" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        i += 1</text>
+<rect x="80" y="781" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="796" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">71</text>
+<text x="88" y="796" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        continue</text>
+<text x="56" y="818" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">72</text>
+<text x="88" y="818" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      }</text>
+<rect x="80" y="825" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="840" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">73</text>
+<text x="88" y="840" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (separator === &#39;;&#39;) {</text>
+<text x="56" y="862" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">74</text>
+<text x="88" y="862" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        i += 1</text>
+<rect x="80" y="869" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="884" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">75</text>
+<text x="88" y="884" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        if (i &lt; tokens.length) predicateToken = tokens[i++]</text>
+<text x="56" y="906" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">76</text>
+<text x="88" y="906" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        continue</text>
+<rect x="80" y="913" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="928" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">77</text>
+<text x="88" y="928" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      }</text>
+<text x="56" y="950" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">78</text>
+<text x="88" y="950" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (separator === &#39;.&#39;) {</text>
+<rect x="80" y="957" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="972" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">79</text>
+<text x="88" y="972" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        i += 1</text>
+<text x="56" y="994" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">80</text>
+<text x="88" y="994" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        break</text>
+<rect x="80" y="1001" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1016" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">81</text>
+<text x="88" y="1016" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      }</text>
+<text x="56" y="1038" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">82</text>
+<text x="88" y="1038" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (!separator) break</text>
+<rect x="80" y="1045" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1060" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">83</text>
+<text x="88" y="1060" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      i += 1</text>
+<text x="56" y="1082" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">84</text>
+<text x="88" y="1082" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      break</text>
+<rect x="80" y="1089" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1104" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">85</text>
+<text x="88" y="1104" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    }</text>
+<text x="56" y="1126" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">86</text>
+<text x="88" y="1126" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<rect x="80" y="1133" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1148" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">87</text>
+<text x="88" y="1148" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="1170" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">88</text>
+<text x="88" y="1170" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  if (!entries.length) throw new Error(&#39;Unsupported SPARQL query: no triple patterns found.&#39;)</text>
+<rect x="80" y="1177" width="946" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1192" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">89</text>
+<text x="88" y="1192" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  return entries</text>
+<text x="56" y="1214" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">90</text>
+<text x="88" y="1214" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">}</text>
+<rect x="0" y="1260" width="1026" height="28" fill="#0f172a"/>
+<text x="18" y="1278" font-family="Menlo, Consolas, Monaco, monospace" font-size="12" fill="#94a3b8">Source: src/lib/sparqlLocal.js</text>
+</svg>

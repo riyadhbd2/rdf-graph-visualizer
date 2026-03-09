@@ -15,6 +15,9 @@ export const defaultConfig = {
   filters: { subjects: [], predicates: [], objects: [] },
   highlightShacl: true,
   uniformNodeSize: true,
+  evaluationMode: false,
+  exploreMode: true,
+  showEdgeLabels: false,
 }
 
 function normalizeTemplate(template) {

@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="994" height="1816" viewBox="0 0 994 1816">
+<rect x="0" y="0" width="994" height="1816" fill="#0b1220"/>
+<rect x="0" y="0" width="994" height="46" fill="#111a2b"/>
+<text x="18" y="29" font-family="Menlo, Consolas, Monaco, monospace" font-size="15" fill="#e2e8f0">Figure 17.7  Explore Mode Force Simulation (GraphView.jsx:848-924)</text>
+<rect x="0" y="46" width="80" height="1742" fill="#0f172a"/>
+<text x="56" y="70" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">848</text>
+<text x="88" y="70" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    if (enablePhysics) {</text>
+<rect x="80" y="77" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="92" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">849</text>
+<text x="88" y="92" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const simulation = d3</text>
+<text x="56" y="114" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">850</text>
+<text x="88" y="114" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .forceSimulation(nodes)</text>
+<rect x="80" y="121" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="136" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">851</text>
+<text x="88" y="136" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .force(</text>
+<text x="56" y="158" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">852</text>
+<text x="88" y="158" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          &#39;link&#39;,</text>
+<rect x="80" y="165" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="180" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">853</text>
+<text x="88" y="180" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d3</text>
+<text x="56" y="202" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">854</text>
+<text x="88" y="202" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            .forceLink(linkData)</text>
+<rect x="80" y="209" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="224" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">855</text>
+<text x="88" y="224" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            .id(d =&gt; d.id)</text>
+<text x="56" y="246" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">856</text>
+<text x="88" y="246" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            .distance(d =&gt; {</text>
+<rect x="80" y="253" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="268" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">857</text>
+<text x="88" y="268" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">              const src = typeof d.source === &#39;object&#39; ? d.source : nodeLookup.get(d.source)</text>
+<text x="56" y="290" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">858</text>
+<text x="88" y="290" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">              const tgt = typeof d.target === &#39;object&#39; ? d.target : nodeLookup.get(d.target)</text>
+<rect x="80" y="297" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="312" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">859</text>
+<text x="88" y="312" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">              const base = 110 + Math.max(src?.width || 0, tgt?.width || 0) * 0.2</text>
+<text x="56" y="334" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">860</text>
+<text x="88" y="334" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">              return base</text>
+<rect x="80" y="341" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="356" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">861</text>
+<text x="88" y="356" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            })</text>
+<text x="56" y="378" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">862</text>
+<text x="88" y="378" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            .strength(0.18)</text>
+<rect x="80" y="385" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="400" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">863</text>
+<text x="88" y="400" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        )</text>
+<text x="56" y="422" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">864</text>
+<text x="88" y="422" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .force(&#39;charge&#39;, d3.forceManyBody().strength(-80))</text>
+<rect x="80" y="429" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="444" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">865</text>
+<text x="88" y="444" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .force(</text>
+<text x="56" y="466" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">866</text>
+<text x="88" y="466" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          &#39;collide&#39;,</text>
+<rect x="80" y="473" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="488" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">867</text>
+<text x="88" y="488" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d3</text>
+<text x="56" y="510" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">868</text>
+<text x="88" y="510" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            .forceCollide()</text>
+<rect x="80" y="517" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="532" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">869</text>
+<text x="88" y="532" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            .radius(d =&gt; Math.max(d.width || baseNodeSize.width, d.height || baseNodeSize.height) / 2 + 8)</text>
+<text x="56" y="554" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">870</text>
+<text x="88" y="554" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        )</text>
+<rect x="80" y="561" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="576" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">871</text>
+<text x="88" y="576" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .force(&#39;x&#39;, d3.forceX(d =&gt; d.originX || 0).strength(0.08))</text>
+<text x="56" y="598" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">872</text>
+<text x="88" y="598" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .force(&#39;y&#39;, d3.forceY(d =&gt; d.originY || 0).strength(0.08))</text>
+<rect x="80" y="605" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="620" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">873</text>
+<text x="88" y="620" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .force(&#39;center&#39;, d3.forceCenter((xMin + xMax) / 2, (yMin + yMax) / 2))</text>
+<text x="56" y="642" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">874</text>
+<text x="88" y="642" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .velocityDecay(0.4)</text>
+<rect x="80" y="649" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="664" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">875</text>
+<text x="88" y="664" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .alpha(0.7)</text>
+<text x="56" y="686" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">876</text>
+<text x="88" y="686" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .alphaDecay(0.12)</text>
+<rect x="80" y="693" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="708" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">877</text>
+<text x="88" y="708" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="730" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">878</text>
+<text x="88" y="730" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      simulationRef.current = simulation</text>
+<rect x="80" y="737" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="752" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">879</text>
+<text x="88" y="752" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="774" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">880</text>
+<text x="88" y="774" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const dragBehavior = d3</text>
+<rect x="80" y="781" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="796" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">881</text>
+<text x="88" y="796" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .drag()</text>
+<text x="56" y="818" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">882</text>
+<text x="88" y="818" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .on(&#39;start&#39;, (event, d) =&gt; {</text>
+<rect x="80" y="825" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="840" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">883</text>
+<text x="88" y="840" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          event.sourceEvent?.stopPropagation()</text>
+<text x="56" y="862" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">884</text>
+<text x="88" y="862" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          if (!event.active) simulation.alphaTarget(0.3).restart()</text>
+<rect x="80" y="869" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="884" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">885</text>
+<text x="88" y="884" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d.fx = d.x</text>
+<text x="56" y="906" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">886</text>
+<text x="88" y="906" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d.fy = d.y</text>
+<rect x="80" y="913" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="928" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">887</text>
+<text x="88" y="928" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        })</text>
+<text x="56" y="950" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">888</text>
+<text x="88" y="950" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .on(&#39;drag&#39;, (event, d) =&gt; {</text>
+<rect x="80" y="957" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="972" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">889</text>
+<text x="88" y="972" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d.fx = event.x</text>
+<text x="56" y="994" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">890</text>
+<text x="88" y="994" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d.fy = event.y</text>
+<rect x="80" y="1001" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1016" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">891</text>
+<text x="88" y="1016" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        })</text>
+<text x="56" y="1038" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">892</text>
+<text x="88" y="1038" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        .on(&#39;end&#39;, (event, d) =&gt; {</text>
+<rect x="80" y="1045" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1060" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">893</text>
+<text x="88" y="1060" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          if (!event.active) simulation.alphaTarget(0)</text>
+<text x="56" y="1082" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">894</text>
+<text x="88" y="1082" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d.fx = null</text>
+<rect x="80" y="1089" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1104" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">895</text>
+<text x="88" y="1104" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          d.fy = null</text>
+<text x="56" y="1126" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">896</text>
+<text x="88" y="1126" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        })</text>
+<rect x="80" y="1133" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1148" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">897</text>
+<text x="88" y="1148" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="1170" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">898</text>
+<text x="88" y="1170" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      node.call(dragBehavior)</text>
+<rect x="80" y="1177" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1192" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">899</text>
+<text x="88" y="1192" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="1214" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">900</text>
+<text x="88" y="1214" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      simulation.on(&#39;tick&#39;, () =&gt; {</text>
+<rect x="80" y="1221" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1236" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">901</text>
+<text x="88" y="1236" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        updateNodeShapes(shape)</text>
+<text x="56" y="1258" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">902</text>
+<text x="88" y="1258" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="1265" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1280" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">903</text>
+<text x="88" y="1280" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        node</text>
+<text x="56" y="1302" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">904</text>
+<text x="88" y="1302" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          .select(&#39;text&#39;)</text>
+<rect x="80" y="1309" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1324" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">905</text>
+<text x="88" y="1324" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          .attr(&#39;x&#39;, d =&gt; (d.x || 0) + (d.width || baseNodeSize.width) / 2)</text>
+<text x="56" y="1346" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">906</text>
+<text x="88" y="1346" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          .attr(&#39;y&#39;, d =&gt; {</text>
+<rect x="80" y="1353" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1368" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">907</text>
+<text x="88" y="1368" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            const lines = (d.label || d.id).split(&#39;\n&#39;)</text>
+<text x="56" y="1390" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">908</text>
+<text x="88" y="1390" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            const centerY = (d.y || 0) + (d.height || baseNodeSize.height) / 2</text>
+<rect x="80" y="1397" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1412" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">909</text>
+<text x="88" y="1412" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            return centerY - (lines.length - 1) * 8</text>
+<text x="56" y="1434" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">910</text>
+<text x="88" y="1434" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          })</text>
+<rect x="80" y="1441" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1456" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">911</text>
+<text x="88" y="1456" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          .selectAll(&#39;tspan&#39;)</text>
+<text x="56" y="1478" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">912</text>
+<text x="88" y="1478" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          .attr(&#39;x&#39;, (line, i, nodesArr) =&gt; {</text>
+<rect x="80" y="1485" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1500" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">913</text>
+<text x="88" y="1500" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            const datum = d3.select(nodesArr[i].parentNode).data()[0]</text>
+<text x="56" y="1522" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">914</text>
+<text x="88" y="1522" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">            return (datum.x || 0) + (datum.width || baseNodeSize.width) / 2</text>
+<rect x="80" y="1529" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1544" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">915</text>
+<text x="88" y="1544" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          })</text>
+<text x="56" y="1566" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">916</text>
+<text x="88" y="1566" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="1573" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1588" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">917</text>
+<text x="88" y="1588" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        linkPaths.attr(&#39;d&#39;, d =&gt; (useSmoothEdges ? linkPathSmooth(d) : linkPathStraight(d)))</text>
+<text x="56" y="1610" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">918</text>
+<text x="88" y="1610" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      })</text>
+<rect x="80" y="1617" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1632" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">919</text>
+<text x="88" y="1632" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="1654" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">920</text>
+<text x="88" y="1654" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      simulation.on(&#39;end&#39;, () =&gt; {</text>
+<rect x="80" y="1661" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1676" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">921</text>
+<text x="88" y="1676" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        updateViewportBounds(nodes)</text>
+<text x="56" y="1698" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">922</text>
+<text x="88" y="1698" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        emitMetrics(nodes)</text>
+<rect x="80" y="1705" width="914" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1720" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">923</text>
+<text x="88" y="1720" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        resetViewIfNeeded()</text>
+<text x="56" y="1742" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">924</text>
+<text x="88" y="1742" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      })</text>
+<rect x="0" y="1788" width="994" height="28" fill="#0f172a"/>
+<text x="18" y="1806" font-family="Menlo, Consolas, Monaco, monospace" font-size="12" fill="#94a3b8">Source: src/components/GraphView.jsx</text>
+</svg>
