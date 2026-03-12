@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920">
+<style>.title{font:700 30px 'Helvetica Neue',Arial,sans-serif;fill:#0f172a;}.subtitle{font:500 14px 'Helvetica Neue',Arial,sans-serif;fill:#64748b;}.tick{font:500 12px 'Helvetica Neue',Arial,sans-serif;fill:#475569;}.label{font:600 12px 'Helvetica Neue',Arial,sans-serif;fill:#111827;}.value{font:600 12px 'Helvetica Neue',Arial,sans-serif;fill:#111827;}.axis{font:600 14px 'Helvetica Neue',Arial,sans-serif;fill:#334155;}</style>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<text class="title" x="120" y="52">Chart EV-7 Node Overlaps (Small and Medium Tiers)</text>
+<text class="subtitle" x="120" y="80">Measured values from 5 runs per dataset-size tier.</text>
+<line x1="120" y1="710.00" x2="1520" y2="710.00" stroke="#e2e8f0"/>
+<text class="tick" x="110" y="714.00" text-anchor="end">0</text>
+<line x1="120" y1="591.00" x2="1520" y2="591.00" stroke="#e2e8f0"/>
+<text class="tick" x="110" y="595.00" text-anchor="end">7</text>
+<line x1="120" y1="472.00" x2="1520" y2="472.00" stroke="#e2e8f0"/>
+<text class="tick" x="110" y="476.00" text-anchor="end">14</text>
+<line x1="120" y1="353.00" x2="1520" y2="353.00" stroke="#e2e8f0"/>
+<text class="tick" x="110" y="357.00" text-anchor="end">21</text>
+<line x1="120" y1="234.00" x2="1520" y2="234.00" stroke="#e2e8f0"/>
+<text class="tick" x="110" y="238.00" text-anchor="end">28</text>
+<line x1="120" y1="115.00" x2="1520" y2="115.00" stroke="#e2e8f0"/>
+<text class="tick" x="110" y="119.00" text-anchor="end">34</text>
+<line x1="120" y1="115" x2="120" y2="710" stroke="#475569" stroke-width="1.3"/>
+<line x1="120" y1="710" x2="1520" y2="710" stroke="#475569" stroke-width="1.3"/>
+<rect x="138.00" y="606.52" width="212.33" height="103.48" fill="#0f766e" rx="4"/>
+<text class="value" x="244.17" y="598.52" text-anchor="middle">6</text>
+<text class="label" x="244.17" y="734.00" text-anchor="middle" transform="rotate(-18 244.17 734.00)">A-S</text>
+<rect x="368.33" y="192.61" width="212.33" height="517.39" fill="#0f766e" rx="4"/>
+<text class="value" x="474.50" y="184.61" text-anchor="middle">30</text>
+<text class="label" x="474.50" y="734.00" text-anchor="middle" transform="rotate(-18 474.50 734.00)">A-M</text>
+<rect x="598.67" y="572.03" width="212.33" height="137.97" fill="#1d4ed8" rx="4"/>
+<text class="value" x="704.83" y="564.03" text-anchor="middle">8</text>
+<text class="label" x="704.83" y="734.00" text-anchor="middle" transform="rotate(-18 704.83 734.00)">B-S</text>
+<rect x="829.00" y="313.33" width="212.33" height="396.67" fill="#1d4ed8" rx="4"/>
+<text class="value" x="935.17" y="305.33" text-anchor="middle">23</text>
+<text class="label" x="935.17" y="734.00" text-anchor="middle" transform="rotate(-18 935.17 734.00)">B-M</text>
+<rect x="1059.33" y="554.78" width="212.33" height="155.22" fill="#d97706" rx="4"/>
+<text class="value" x="1165.50" y="546.78" text-anchor="middle">9</text>
+<text class="label" x="1165.50" y="734.00" text-anchor="middle" transform="rotate(-18 1165.50 734.00)">C-S</text>
+<rect x="1289.67" y="382.32" width="212.33" height="327.68" fill="#d97706" rx="4"/>
+<text class="value" x="1395.83" y="374.32" text-anchor="middle">19</text>
+<text class="label" x="1395.83" y="734.00" text-anchor="middle" transform="rotate(-18 1395.83 734.00)">C-M</text>
+<text class="axis" x="34" y="412.50" transform="rotate(-90 34 412.50)">Node overlap count</text>
+</svg>

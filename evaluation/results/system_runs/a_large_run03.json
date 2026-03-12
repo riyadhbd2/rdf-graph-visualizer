@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "nodeCount": 2000,
+  "edgeCount": 4719,
+  "bounds": {
+    "xMin": 12,
+    "yMin": 27,
+    "xMax": 41170,
+    "yMax": 74527.08138528146,
+    "width": 41158,
+    "height": 74500.08138528146,
+    "area": 3066274349.6554146
+  },
+  "density": 6.522573559749336e-7,
+  "aspectRatio": 0.5524557723252547,
+  "nodeAreaTotal": 19006635.554217573,
+  "whitespaceRatio": 0.9938013910737135,
+  "avgEdgeLength": 16764.915789788723,
+  "medianEdgeLength": 14693.816678301702,
+  "edgeLengthStdDev": 12975.789608621477,
+  "minEdgeLength": 158,
+  "maxEdgeLength": 71831.37596144168,
+  "edgeCrossings": null,
+  "edgeCrossingsNote": "skipped (edge count > 800)",
+  "nodeOverlaps": null,
+  "nodeOverlapsNote": "skipped (node count > 500)",
+  "meta": {
+    "evaluationMode": true,
+    "physicsEnabled": false,
+    "layoutAlgorithm": "layered",
+    "layoutDirection": "RIGHT",
+    "uniformNodeSize": true,
+    "collapseLiterals": true,
+    "mergeParallelEdges": true,
+    "maxNodes": 2000,
+    "nodeLabelTemplate": "rdfs:label|foaf:name|@id",
+    "edgeLabelTemplate": "@predicate",
+    "title": "RDF Graph",
+    "layoutMs": 59414.199999809265,
+    "renderStats": {
+      "source": "file",
+      "parseMs": 31.799999952316284,
+      "filterMs": null,
+      "buildMs": 24.100000143051147,
+      "totalMs": 56.09999990463257,
+      "triplesCount": 6720,
+      "nodesCount": 2000,
+      "edgesCount": 4719
+    }
+  }
+}
