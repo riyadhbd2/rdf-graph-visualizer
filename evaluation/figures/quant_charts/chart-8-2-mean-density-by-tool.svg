@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+<style>.title{font:700 30px 'Helvetica Neue',Arial,sans-serif;fill:#0f172a;}.axis{font:500 14px 'Helvetica Neue',Arial,sans-serif;fill:#334155;}.tick{font:500 12px 'Helvetica Neue',Arial,sans-serif;fill:#475569;}.label{font:600 13px 'Helvetica Neue',Arial,sans-serif;fill:#111827;}.value{font:600 12px 'Helvetica Neue',Arial,sans-serif;fill:#0f172a;}.subtitle{font:500 13px 'Helvetica Neue',Arial,sans-serif;fill:#64748b;}</style>
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<text class="title" x="120" y="52">Chart 8.2 Mean Node Density by Tool</text>
+<text class="subtitle" x="120" y="78">Derived from current quantitative tables (A/B/C x Small/Medium/Large).</text>
+<line x1="120" y1="710.00" x2="1420" y2="710.00" stroke="#e2e8f0" />
+<text class="tick" x="110" y="714.00" text-anchor="end">0.0</text>
+<line x1="120" y1="590.00" x2="1420" y2="590.00" stroke="#e2e8f0" />
+<text class="tick" x="110" y="594.00" text-anchor="end">97.3</text>
+<line x1="120" y1="470.00" x2="1420" y2="470.00" stroke="#e2e8f0" />
+<text class="tick" x="110" y="474.00" text-anchor="end">194.6</text>
+<line x1="120" y1="350.00" x2="1420" y2="350.00" stroke="#e2e8f0" />
+<text class="tick" x="110" y="354.00" text-anchor="end">291.9</text>
+<line x1="120" y1="230.00" x2="1420" y2="230.00" stroke="#e2e8f0" />
+<text class="tick" x="110" y="234.00" text-anchor="end">389.2</text>
+<line x1="120" y1="110.00" x2="1420" y2="110.00" stroke="#e2e8f0" />
+<text class="tick" x="110" y="114.00" text-anchor="end">486.5</text>
+<line x1="120" y1="710" x2="1420" y2="710" stroke="#475569" stroke-width="1.2"/>
+<line x1="120" y1="110" x2="120" y2="710" stroke="#475569" stroke-width="1.2"/>
+<rect x="146.00" y="174.29" width="186.33" height="535.71" fill="#0f766e" rx="4"/>
+<text class="value" x="239.17" y="166.29" text-anchor="middle">434.3</text>
+<text class="label" x="239.17" y="734.00" text-anchor="middle" transform="rotate(-20 239.17 734.00)">This system</text>
+<rect x="358.33" y="333.53" width="186.33" height="376.47" fill="#1d4ed8" rx="4"/>
+<text class="value" x="451.50" y="325.53" text-anchor="middle">305.2</text>
+<text class="label" x="451.50" y="734.00" text-anchor="middle" transform="rotate(-20 451.50 734.00)">WebVOWL</text>
+<rect x="570.67" y="364.64" width="186.33" height="345.36" fill="#7c3aed" rx="4"/>
+<text class="value" x="663.83" y="356.64" text-anchor="middle">280.0</text>
+<text class="label" x="663.83" y="734.00" text-anchor="middle" transform="rotate(-20 663.83 734.00)">LodLive</text>
+<rect x="783.00" y="312.70" width="186.33" height="397.30" fill="#d97706" rx="4"/>
+<text class="value" x="876.17" y="304.70" text-anchor="middle">322.1</text>
+<text class="label" x="876.17" y="734.00" text-anchor="middle" transform="rotate(-20 876.17 734.00)">GraphDB Visual Graph</text>
+<rect x="995.33" y="348.61" width="186.33" height="361.39" fill="#b91c1c" rx="4"/>
+<text class="value" x="1088.50" y="340.61" text-anchor="middle">293.0</text>
+<text class="label" x="1088.50" y="734.00" text-anchor="middle" transform="rotate(-20 1088.50 734.00)">Protege (OntoGraf)</text>
+<rect x="1207.67" y="289.27" width="186.33" height="420.73" fill="#374151" rx="4"/>
+<text class="value" x="1300.83" y="281.27" text-anchor="middle">341.1</text>
+<text class="label" x="1300.83" y="734.00" text-anchor="middle" transform="rotate(-20 1300.83 734.00)">Ontodia</text>
+<text class="axis" x="35" y="410.00" transform="rotate(-90 35 410.00)">Density (x10^-6 nodes/px^2)</text>
+</svg>

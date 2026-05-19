@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1260" viewBox="0 0 1900 1260">
+<style>
+  .title { font: 700 22px "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+  .label { font: 600 14px "Helvetica Neue", Arial, sans-serif; fill: #1e293b; }
+  .hint { font: 500 12px "Helvetica Neue", Arial, sans-serif; fill: #475569; }
+  .frame { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; }
+</style>
+<text class="title" x="20" y="38">Figure 10.1: Dataset A (LUBM, Small) compactness comparison across tools</text>
+<rect class="frame" x="20" y="70" width="600" height="560" rx="10"/>
+<image href="../figure10_raw/a_small_system.png" x="28" y="96" width="584" height="526" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="30" y="88">(a) This system</text>
+<rect class="frame" x="650" y="70" width="600" height="560" rx="10"/>
+<image href="../figure10_raw/a_small_webvowl.png" x="658" y="96" width="584" height="526" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="660" y="88">(b) WebVOWL</text>
+<rect class="frame" x="1280" y="70" width="600" height="560" rx="10"/>
+<image href="../figure10_raw/a_small_lodlive.png" x="1288" y="96" width="584" height="526" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="1290" y="88">(c) LodLive</text>
+<rect class="frame" x="20" y="660" width="600" height="560" rx="10"/>
+<image href="../figure10_raw/a_small_graphdb.png" x="28" y="686" width="584" height="526" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="30" y="678">(d) GraphDB Visual Graph</text>
+<rect class="frame" x="650" y="660" width="600" height="560" rx="10"/>
+<image href="../figure10_raw/a_small_protege_ontograf.png" x="658" y="686" width="584" height="526" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="660" y="678">(e) Protégé (OntoGraf)</text>
+<rect class="frame" x="1280" y="660" width="600" height="560" rx="10"/>
+<image href="../figure10_raw/a_small_ontodia.png" x="1288" y="686" width="584" height="526" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="1290" y="678">(f) Ontodia</text>
+</svg>

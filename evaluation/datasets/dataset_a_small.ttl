@@ -1,0 +1,328 @@
+@prefix ex:   <http://example.org/kg/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:n1 rdfs:label "Node 1" .
+ex:n2 rdfs:label "Node 2" .
+ex:n3 rdfs:label "Node 3" .
+ex:n4 rdfs:label "Node 4" .
+ex:n5 rdfs:label "Node 5" .
+ex:n6 rdfs:label "Node 6" .
+ex:n7 rdfs:label "Node 7" .
+ex:n8 rdfs:label "Node 8" .
+ex:n9 rdfs:label "Node 9" .
+ex:n10 rdfs:label "Node 10" .
+ex:n11 rdfs:label "Node 11" .
+ex:n12 rdfs:label "Node 12" .
+ex:n13 rdfs:label "Node 13" .
+ex:n14 rdfs:label "Node 14" .
+ex:n15 rdfs:label "Node 15" .
+ex:n16 rdfs:label "Node 16" .
+ex:n17 rdfs:label "Node 17" .
+ex:n18 rdfs:label "Node 18" .
+ex:n19 rdfs:label "Node 19" .
+ex:n20 rdfs:label "Node 20" .
+ex:n21 rdfs:label "Node 21" .
+ex:n22 rdfs:label "Node 22" .
+ex:n23 rdfs:label "Node 23" .
+ex:n24 rdfs:label "Node 24" .
+ex:n25 rdfs:label "Node 25" .
+ex:n26 rdfs:label "Node 26" .
+ex:n27 rdfs:label "Node 27" .
+ex:n28 rdfs:label "Node 28" .
+ex:n29 rdfs:label "Node 29" .
+ex:n30 rdfs:label "Node 30" .
+ex:n31 rdfs:label "Node 31" .
+ex:n32 rdfs:label "Node 32" .
+ex:n33 rdfs:label "Node 33" .
+ex:n34 rdfs:label "Node 34" .
+ex:n35 rdfs:label "Node 35" .
+ex:n36 rdfs:label "Node 36" .
+ex:n37 rdfs:label "Node 37" .
+ex:n38 rdfs:label "Node 38" .
+ex:n39 rdfs:label "Node 39" .
+ex:n40 rdfs:label "Node 40" .
+ex:n41 rdfs:label "Node 41" .
+ex:n42 rdfs:label "Node 42" .
+ex:n43 rdfs:label "Node 43" .
+ex:n44 rdfs:label "Node 44" .
+ex:n45 rdfs:label "Node 45" .
+ex:n46 rdfs:label "Node 46" .
+ex:n47 rdfs:label "Node 47" .
+ex:n48 rdfs:label "Node 48" .
+ex:n49 rdfs:label "Node 49" .
+ex:n50 rdfs:label "Node 50" .
+ex:n51 rdfs:label "Node 51" .
+ex:n52 rdfs:label "Node 52" .
+ex:n53 rdfs:label "Node 53" .
+ex:n54 rdfs:label "Node 54" .
+ex:n55 rdfs:label "Node 55" .
+ex:n56 rdfs:label "Node 56" .
+ex:n57 rdfs:label "Node 57" .
+ex:n58 rdfs:label "Node 58" .
+ex:n59 rdfs:label "Node 59" .
+ex:n60 rdfs:label "Node 60" .
+ex:n61 rdfs:label "Node 61" .
+ex:n62 rdfs:label "Node 62" .
+ex:n63 rdfs:label "Node 63" .
+ex:n64 rdfs:label "Node 64" .
+ex:n65 rdfs:label "Node 65" .
+ex:n66 rdfs:label "Node 66" .
+ex:n67 rdfs:label "Node 67" .
+ex:n68 rdfs:label "Node 68" .
+ex:n69 rdfs:label "Node 69" .
+ex:n70 rdfs:label "Node 70" .
+ex:n71 rdfs:label "Node 71" .
+ex:n72 rdfs:label "Node 72" .
+ex:n73 rdfs:label "Node 73" .
+ex:n74 rdfs:label "Node 74" .
+ex:n75 rdfs:label "Node 75" .
+ex:n76 rdfs:label "Node 76" .
+ex:n77 rdfs:label "Node 77" .
+ex:n78 rdfs:label "Node 78" .
+ex:n79 rdfs:label "Node 79" .
+ex:n80 rdfs:label "Node 80" .
+ex:n81 rdfs:label "Node 81" .
+ex:n82 rdfs:label "Node 82" .
+ex:n83 rdfs:label "Node 83" .
+ex:n84 rdfs:label "Node 84" .
+ex:n85 rdfs:label "Node 85" .
+ex:n86 rdfs:label "Node 86" .
+ex:n87 rdfs:label "Node 87" .
+ex:n88 rdfs:label "Node 88" .
+ex:n89 rdfs:label "Node 89" .
+ex:n90 rdfs:label "Node 90" .
+ex:n91 rdfs:label "Node 91" .
+ex:n92 rdfs:label "Node 92" .
+ex:n93 rdfs:label "Node 93" .
+ex:n94 rdfs:label "Node 94" .
+ex:n95 rdfs:label "Node 95" .
+ex:n96 rdfs:label "Node 96" .
+ex:n97 rdfs:label "Node 97" .
+ex:n98 rdfs:label "Node 98" .
+ex:n99 rdfs:label "Node 99" .
+ex:n100 rdfs:label "Node 100" .
+
+ex:n1 ex:knows ex:n2 .
+ex:n1 ex:knows ex:n11 .
+ex:n1 ex:knows ex:n60 .
+ex:n2 ex:knows ex:n3 .
+ex:n3 ex:knows ex:n4 .
+ex:n3 ex:worksWith ex:n18 .
+ex:n3 ex:linkedTo ex:n48 .
+ex:n4 ex:knows ex:n5 .
+ex:n5 ex:knows ex:n6 .
+ex:n5 ex:linkedTo ex:n25 .
+ex:n5 ex:worksWith ex:n31 .
+ex:n5 ex:worksWith ex:n74 .
+ex:n5 ex:worksWith ex:n97 .
+ex:n5 ex:worksWith ex:n99 .
+ex:n6 ex:knows ex:n7 .
+ex:n6 ex:knows ex:n44 .
+ex:n6 ex:linkedTo ex:n58 .
+ex:n7 ex:knows ex:n8 .
+ex:n7 ex:worksWith ex:n75 .
+ex:n8 ex:knows ex:n9 .
+ex:n8 ex:worksWith ex:n13 .
+ex:n9 ex:linkedTo ex:n8 .
+ex:n9 ex:knows ex:n10 .
+ex:n9 ex:worksWith ex:n56 .
+ex:n9 ex:knows ex:n98 .
+ex:n10 ex:knows ex:n11 .
+ex:n10 ex:worksWith ex:n19 .
+ex:n11 ex:knows ex:n12 .
+ex:n12 ex:knows ex:n13 .
+ex:n12 ex:knows ex:n36 .
+ex:n12 ex:linkedTo ex:n57 .
+ex:n12 ex:worksWith ex:n80 .
+ex:n13 ex:knows ex:n14 .
+ex:n14 ex:knows ex:n15 .
+ex:n15 ex:knows ex:n16 .
+ex:n16 ex:knows ex:n17 .
+ex:n16 ex:worksWith ex:n19 .
+ex:n16 ex:knows ex:n48 .
+ex:n16 ex:linkedTo ex:n87 .
+ex:n17 ex:knows ex:n18 .
+ex:n17 ex:linkedTo ex:n33 .
+ex:n17 ex:linkedTo ex:n59 .
+ex:n18 ex:knows ex:n11 .
+ex:n18 ex:knows ex:n19 .
+ex:n19 ex:knows ex:n20 .
+ex:n19 ex:linkedTo ex:n63 .
+ex:n20 ex:knows ex:n21 .
+ex:n20 ex:knows ex:n77 .
+ex:n21 ex:knows ex:n22 .
+ex:n21 ex:linkedTo ex:n23 .
+ex:n22 ex:knows ex:n23 .
+ex:n23 ex:knows ex:n24 .
+ex:n24 ex:knows ex:n25 .
+ex:n25 ex:knows ex:n26 .
+ex:n25 ex:knows ex:n36 .
+ex:n25 ex:knows ex:n58 .
+ex:n26 ex:knows ex:n27 .
+ex:n26 ex:linkedTo ex:n71 .
+ex:n27 ex:knows ex:n28 .
+ex:n27 ex:worksWith ex:n59 .
+ex:n28 ex:linkedTo ex:n19 .
+ex:n28 ex:knows ex:n29 .
+ex:n29 ex:knows ex:n30 .
+ex:n29 ex:knows ex:n67 .
+ex:n30 ex:linkedTo ex:n14 .
+ex:n30 ex:knows ex:n31 .
+ex:n31 ex:knows ex:n32 .
+ex:n32 ex:worksWith ex:n26 .
+ex:n32 ex:knows ex:n33 .
+ex:n33 ex:knows ex:n25 .
+ex:n33 ex:worksWith ex:n31 .
+ex:n33 ex:knows ex:n34 .
+ex:n33 ex:knows ex:n60 .
+ex:n34 ex:knows ex:n1 .
+ex:n34 ex:knows ex:n35 .
+ex:n35 ex:knows ex:n36 .
+ex:n35 ex:linkedTo ex:n61 .
+ex:n36 ex:knows ex:n37 .
+ex:n36 ex:knows ex:n84 .
+ex:n36 ex:worksWith ex:n87 .
+ex:n36 ex:linkedTo ex:n99 .
+ex:n37 ex:knows ex:n31 .
+ex:n37 ex:knows ex:n38 .
+ex:n37 ex:linkedTo ex:n88 .
+ex:n38 ex:knows ex:n39 .
+ex:n39 ex:knows ex:n28 .
+ex:n39 ex:knows ex:n40 .
+ex:n40 ex:knows ex:n41 .
+ex:n40 ex:worksWith ex:n44 .
+ex:n40 ex:worksWith ex:n68 .
+ex:n41 ex:knows ex:n32 .
+ex:n41 ex:knows ex:n42 .
+ex:n42 ex:linkedTo ex:n31 .
+ex:n42 ex:knows ex:n43 .
+ex:n43 ex:knows ex:n44 .
+ex:n43 ex:knows ex:n57 .
+ex:n43 ex:worksWith ex:n86 .
+ex:n44 ex:knows ex:n45 .
+ex:n44 ex:linkedTo ex:n67 .
+ex:n45 ex:knows ex:n46 .
+ex:n45 ex:worksWith ex:n87 .
+ex:n46 ex:linkedTo ex:n28 .
+ex:n46 ex:knows ex:n47 .
+ex:n46 ex:knows ex:n60 .
+ex:n47 ex:worksWith ex:n2 .
+ex:n47 ex:worksWith ex:n25 .
+ex:n47 ex:knows ex:n48 .
+ex:n47 ex:linkedTo ex:n66 .
+ex:n47 ex:linkedTo ex:n84 .
+ex:n48 ex:knows ex:n49 .
+ex:n49 ex:knows ex:n50 .
+ex:n50 ex:worksWith ex:n31 .
+ex:n50 ex:knows ex:n51 .
+ex:n51 ex:knows ex:n49 .
+ex:n51 ex:knows ex:n52 .
+ex:n52 ex:knows ex:n53 .
+ex:n52 ex:knows ex:n55 .
+ex:n52 ex:linkedTo ex:n88 .
+ex:n52 ex:knows ex:n97 .
+ex:n53 ex:knows ex:n54 .
+ex:n53 ex:linkedTo ex:n58 .
+ex:n54 ex:knows ex:n55 .
+ex:n55 ex:worksWith ex:n10 .
+ex:n55 ex:linkedTo ex:n15 .
+ex:n55 ex:knows ex:n56 .
+ex:n56 ex:worksWith ex:n24 .
+ex:n56 ex:knows ex:n57 .
+ex:n57 ex:knows ex:n58 .
+ex:n58 ex:knows ex:n59 .
+ex:n58 ex:knows ex:n86 .
+ex:n59 ex:knows ex:n60 .
+ex:n59 ex:knows ex:n82 .
+ex:n59 ex:linkedTo ex:n84 .
+ex:n60 ex:knows ex:n8 .
+ex:n60 ex:knows ex:n61 .
+ex:n61 ex:worksWith ex:n22 .
+ex:n61 ex:knows ex:n62 .
+ex:n62 ex:knows ex:n63 .
+ex:n63 ex:knows ex:n64 .
+ex:n63 ex:knows ex:n89 .
+ex:n64 ex:worksWith ex:n57 .
+ex:n64 ex:knows ex:n65 .
+ex:n65 ex:knows ex:n66 .
+ex:n66 ex:linkedTo ex:n17 .
+ex:n66 ex:knows ex:n40 .
+ex:n66 ex:knows ex:n67 .
+ex:n67 ex:knows ex:n68 .
+ex:n68 ex:worksWith ex:n2 .
+ex:n68 ex:knows ex:n69 .
+ex:n69 ex:knows ex:n13 .
+ex:n69 ex:worksWith ex:n13 .
+ex:n69 ex:worksWith ex:n41 .
+ex:n69 ex:knows ex:n70 .
+ex:n69 ex:worksWith ex:n90 .
+ex:n70 ex:knows ex:n71 .
+ex:n71 ex:knows ex:n72 .
+ex:n71 ex:worksWith ex:n89 .
+ex:n71 ex:knows ex:n91 .
+ex:n72 ex:worksWith ex:n41 .
+ex:n72 ex:knows ex:n49 .
+ex:n72 ex:knows ex:n73 .
+ex:n73 ex:knows ex:n20 .
+ex:n73 ex:knows ex:n74 .
+ex:n74 ex:knows ex:n75 .
+ex:n74 ex:linkedTo ex:n92 .
+ex:n75 ex:linkedTo ex:n25 .
+ex:n75 ex:knows ex:n76 .
+ex:n76 ex:knows ex:n77 .
+ex:n76 ex:linkedTo ex:n86 .
+ex:n77 ex:knows ex:n78 .
+ex:n78 ex:worksWith ex:n12 .
+ex:n78 ex:worksWith ex:n29 .
+ex:n78 ex:knows ex:n79 .
+ex:n79 ex:knows ex:n80 .
+ex:n79 ex:linkedTo ex:n100 .
+ex:n80 ex:knows ex:n8 .
+ex:n80 ex:knows ex:n81 .
+ex:n81 ex:knows ex:n71 .
+ex:n81 ex:knows ex:n82 .
+ex:n82 ex:linkedTo ex:n7 .
+ex:n82 ex:knows ex:n8 .
+ex:n82 ex:linkedTo ex:n16 .
+ex:n82 ex:linkedTo ex:n43 .
+ex:n82 ex:linkedTo ex:n51 .
+ex:n82 ex:knows ex:n83 .
+ex:n83 ex:knows ex:n84 .
+ex:n84 ex:linkedTo ex:n80 .
+ex:n84 ex:knows ex:n85 .
+ex:n85 ex:knows ex:n62 .
+ex:n85 ex:knows ex:n65 .
+ex:n85 ex:knows ex:n86 .
+ex:n86 ex:worksWith ex:n7 .
+ex:n86 ex:knows ex:n87 .
+ex:n87 ex:linkedTo ex:n39 .
+ex:n87 ex:linkedTo ex:n86 .
+ex:n87 ex:knows ex:n88 .
+ex:n88 ex:knows ex:n23 .
+ex:n88 ex:knows ex:n89 .
+ex:n89 ex:linkedTo ex:n35 .
+ex:n89 ex:linkedTo ex:n68 .
+ex:n89 ex:knows ex:n90 .
+ex:n90 ex:knows ex:n8 .
+ex:n90 ex:knows ex:n91 .
+ex:n91 ex:knows ex:n92 .
+ex:n91 ex:linkedTo ex:n97 .
+ex:n92 ex:knows ex:n54 .
+ex:n92 ex:linkedTo ex:n88 .
+ex:n92 ex:knows ex:n93 .
+ex:n93 ex:linkedTo ex:n50 .
+ex:n93 ex:knows ex:n94 .
+ex:n94 ex:linkedTo ex:n25 .
+ex:n94 ex:knows ex:n95 .
+ex:n95 ex:worksWith ex:n57 .
+ex:n95 ex:worksWith ex:n71 .
+ex:n95 ex:knows ex:n96 .
+ex:n96 ex:worksWith ex:n86 .
+ex:n96 ex:knows ex:n97 .
+ex:n97 ex:knows ex:n6 .
+ex:n97 ex:worksWith ex:n25 .
+ex:n97 ex:knows ex:n98 .
+ex:n98 ex:knows ex:n99 .
+ex:n99 ex:knows ex:n100 .
+ex:n100 ex:knows ex:n1 .
+ex:n100 ex:knows ex:n5 .

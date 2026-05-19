@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1508" viewBox="0 0 980 1508">
+<rect x="0" y="0" width="980" height="1508" fill="#0b1220"/>
+<rect x="0" y="0" width="980" height="46" fill="#111a2b"/>
+<text x="18" y="29" font-family="Menlo, Consolas, Monaco, monospace" font-size="15" fill="#e2e8f0">Figure 17.6  Zoom Clamp and Transform Constraints (GraphView.jsx:562-624)</text>
+<rect x="0" y="46" width="80" height="1434" fill="#0f172a"/>
+<text x="56" y="70" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">562</text>
+<text x="88" y="70" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const clampTransform = transform =&gt; {</text>
+<rect x="80" y="77" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="92" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">563</text>
+<text x="88" y="92" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const hostBounds = host.getBoundingClientRect()</text>
+<text x="56" y="114" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">564</text>
+<text x="88" y="114" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const width = hostBounds.width || viewportWidth</text>
+<rect x="80" y="121" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="136" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">565</text>
+<text x="88" y="136" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const height = hostBounds.height || viewportHeight</text>
+<text x="56" y="158" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">566</text>
+<text x="88" y="158" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const [minPoint, maxPoint] = boundsRef.current || [</text>
+<rect x="80" y="165" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="180" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">567</text>
+<text x="88" y="180" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        [xMin, yMin],</text>
+<text x="56" y="202" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">568</text>
+<text x="88" y="202" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        [xMax, yMax],</text>
+<rect x="80" y="209" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="224" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">569</text>
+<text x="88" y="224" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      ]</text>
+<text x="56" y="246" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">570</text>
+<text x="88" y="246" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const minX = minPoint[0]</text>
+<rect x="80" y="253" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="268" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">571</text>
+<text x="88" y="268" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const minY = minPoint[1]</text>
+<text x="56" y="290" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">572</text>
+<text x="88" y="290" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const maxX = maxPoint[0]</text>
+<rect x="80" y="297" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="312" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">573</text>
+<text x="88" y="312" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const maxY = maxPoint[1]</text>
+<text x="56" y="334" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">574</text>
+<text x="88" y="334" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="341" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="356" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">575</text>
+<text x="88" y="356" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const contentWidth = (maxX - minX) * transform.k</text>
+<text x="56" y="378" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">576</text>
+<text x="88" y="378" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const contentHeight = (maxY - minY) * transform.k</text>
+<rect x="80" y="385" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="400" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">577</text>
+<text x="88" y="400" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="422" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">578</text>
+<text x="88" y="422" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (!Number.isFinite(contentWidth) || !Number.isFinite(contentHeight)) return transform</text>
+<rect x="80" y="429" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="444" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">579</text>
+<text x="88" y="444" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="466" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">580</text>
+<text x="88" y="466" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const minTranslateX = width - contentWidth - minX * transform.k</text>
+<rect x="80" y="473" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="488" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">581</text>
+<text x="88" y="488" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const maxTranslateX = -minX * transform.k</text>
+<text x="56" y="510" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">582</text>
+<text x="88" y="510" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const minTranslateY = height - contentHeight - minY * transform.k</text>
+<rect x="80" y="517" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="532" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">583</text>
+<text x="88" y="532" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const maxTranslateY = -minY * transform.k</text>
+<text x="56" y="554" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">584</text>
+<text x="88" y="554" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="561" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="576" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">585</text>
+<text x="88" y="576" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      let tx = transform.x</text>
+<text x="56" y="598" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">586</text>
+<text x="88" y="598" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      let ty = transform.y</text>
+<rect x="80" y="605" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="620" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">587</text>
+<text x="88" y="620" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="642" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">588</text>
+<text x="88" y="642" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (contentWidth &lt; width) {</text>
+<rect x="80" y="649" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="664" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">589</text>
+<text x="88" y="664" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        tx = (width - contentWidth) / 2 - minX * transform.k</text>
+<text x="56" y="686" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">590</text>
+<text x="88" y="686" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      } else {</text>
+<rect x="80" y="693" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="708" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">591</text>
+<text x="88" y="708" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        tx = Math.min(Math.max(tx, minTranslateX), maxTranslateX)</text>
+<text x="56" y="730" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">592</text>
+<text x="88" y="730" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      }</text>
+<rect x="80" y="737" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="752" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">593</text>
+<text x="88" y="752" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="774" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">594</text>
+<text x="88" y="774" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (contentHeight &lt; height) {</text>
+<rect x="80" y="781" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="796" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">595</text>
+<text x="88" y="796" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        ty = (height - contentHeight) / 2 - minY * transform.k</text>
+<text x="56" y="818" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">596</text>
+<text x="88" y="818" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      } else {</text>
+<rect x="80" y="825" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="840" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">597</text>
+<text x="88" y="840" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        ty = Math.min(Math.max(ty, minTranslateY), maxTranslateY)</text>
+<text x="56" y="862" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">598</text>
+<text x="88" y="862" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      }</text>
+<rect x="80" y="869" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="884" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">599</text>
+<text x="88" y="884" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="906" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">600</text>
+<text x="88" y="906" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      return d3.zoomIdentity.translate(tx, ty).scale(transform.k)</text>
+<rect x="80" y="913" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="928" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">601</text>
+<text x="88" y="928" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    }</text>
+<text x="56" y="950" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">602</text>
+<text x="88" y="950" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="957" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="972" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">603</text>
+<text x="88" y="972" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const zoom = d3</text>
+<text x="56" y="994" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">604</text>
+<text x="88" y="994" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .zoom()</text>
+<rect x="80" y="1001" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1016" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">605</text>
+<text x="88" y="1016" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .scaleExtent([minScale, MAX_ZOOM])</text>
+<text x="56" y="1038" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">606</text>
+<text x="88" y="1038" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .translateExtent([</text>
+<rect x="80" y="1045" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1060" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">607</text>
+<text x="88" y="1060" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        [xMin, yMin],</text>
+<text x="56" y="1082" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">608</text>
+<text x="88" y="1082" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        [xMax, yMax],</text>
+<rect x="80" y="1089" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1104" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">609</text>
+<text x="88" y="1104" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      ])</text>
+<text x="56" y="1126" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">610</text>
+<text x="88" y="1126" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .extent([</text>
+<rect x="80" y="1133" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1148" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">611</text>
+<text x="88" y="1148" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        [0, 0],</text>
+<text x="56" y="1170" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">612</text>
+<text x="88" y="1170" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        [viewportWidth, viewportHeight],</text>
+<rect x="80" y="1177" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1192" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">613</text>
+<text x="88" y="1192" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      ])</text>
+<text x="56" y="1214" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">614</text>
+<text x="88" y="1214" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .constrain(transform =&gt; clampTransform(transform))</text>
+<rect x="80" y="1221" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1236" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">615</text>
+<text x="88" y="1236" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .on(&#39;start&#39;, () =&gt; {</text>
+<text x="56" y="1258" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">616</text>
+<text x="88" y="1258" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        hideTooltip()</text>
+<rect x="80" y="1265" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1280" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">617</text>
+<text x="88" y="1280" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      })</text>
+<text x="56" y="1302" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">618</text>
+<text x="88" y="1302" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .on(&#39;zoom&#39;, event =&gt; {</text>
+<rect x="80" y="1309" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1324" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">619</text>
+<text x="88" y="1324" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        zoomLayer.attr(&#39;transform&#39;, event.transform)</text>
+<text x="56" y="1346" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">620</text>
+<text x="88" y="1346" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      })</text>
+<rect x="80" y="1353" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1368" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">621</text>
+<text x="88" y="1368" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="1390" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">622</text>
+<text x="88" y="1390" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    zoomRef.current = zoom</text>
+<rect x="80" y="1397" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1412" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">623</text>
+<text x="88" y="1412" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    svg.call(zoom)</text>
+<text x="56" y="1434" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">624</text>
+<text x="88" y="1434" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="0" y="1480" width="980" height="28" fill="#0f172a"/>
+<text x="18" y="1498" font-family="Menlo, Consolas, Monaco, monospace" font-size="12" fill="#94a3b8">Source: src/components/GraphView.jsx</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<style>
+  .title { font: 700 22px "Helvetica Neue", Arial, sans-serif; fill: #0f172a; }
+  .label { font: 600 14px "Helvetica Neue", Arial, sans-serif; fill: #1e293b; }
+  .hint { font: 500 12px "Helvetica Neue", Arial, sans-serif; fill: #475569; }
+  .frame { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; }
+</style>
+<text class="title" x="20" y="38">Figure 10.5: Dataset C (Wikidata, Large), GraphDB Visual Graph output</text>
+<rect class="frame" x="20" y="70" width="1360" height="800" rx="10"/>
+<image href="../figure10_raw/c_large_graphdb.png" x="28" y="96" width="1344" height="766" preserveAspectRatio="xMidYMid meet"/>
+<text class="label" x="30" y="88">(a) GraphDB Visual Graph</text>
+</svg>

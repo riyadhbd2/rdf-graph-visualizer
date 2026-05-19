@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="936" viewBox="0 0 980 936">
+<rect x="0" y="0" width="980" height="936" fill="#0b1220"/>
+<rect x="0" y="0" width="980" height="46" fill="#111a2b"/>
+<text x="18" y="29" font-family="Menlo, Consolas, Monaco, monospace" font-size="15" fill="#e2e8f0">Figure 17.5  ELK Layout Option Builder (GraphView.jsx:89-125)</text>
+<rect x="0" y="46" width="80" height="862" fill="#0f172a"/>
+<text x="56" y="70" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">89</text>
+<text x="88" y="70" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">function buildElkGraph(graph, cfg) {</text>
+<rect x="80" y="77" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="92" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">90</text>
+<text x="88" y="92" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const elkChildren = graph.nodes.map(node =&gt; {</text>
+<text x="56" y="114" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">91</text>
+<text x="88" y="114" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const dims = getNodeDimensions(node.label || node.id, cfg)</text>
+<rect x="80" y="121" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="136" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">92</text>
+<text x="88" y="136" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    return { id: node.id, width: dims.width, height: dims.height }</text>
+<text x="56" y="158" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">93</text>
+<text x="88" y="158" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  })</text>
+<rect x="80" y="165" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="180" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">94</text>
+<text x="88" y="180" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="202" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">95</text>
+<text x="88" y="202" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const elkEdges = graph.edges.map((edge, index) =&gt; ({</text>
+<rect x="80" y="209" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="224" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">96</text>
+<text x="88" y="224" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    id: `e-${index}`,</text>
+<text x="56" y="246" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">97</text>
+<text x="88" y="246" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    sources: [edge.source],</text>
+<rect x="80" y="253" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="268" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">98</text>
+<text x="88" y="268" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    targets: [edge.target],</text>
+<text x="56" y="290" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">99</text>
+<text x="88" y="290" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    labels: [{ text: edge.predicate }],</text>
+<rect x="80" y="297" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="312" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">100</text>
+<text x="88" y="312" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }))</text>
+<text x="56" y="334" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">101</text>
+<text x="88" y="334" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="341" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="356" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">102</text>
+<text x="88" y="356" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const layout = cfg?.layout || {}</text>
+<text x="56" y="378" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">103</text>
+<text x="88" y="378" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const evaluationMode = cfg?.evaluationMode === true</text>
+<rect x="80" y="385" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="400" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">104</text>
+<text x="88" y="400" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const betweenLayers =</text>
+<text x="56" y="422" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">105</text>
+<text x="88" y="422" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    layout[&#39;elk.layered.spacing.nodeNodeBetweenLayers&#39;] ??</text>
+<rect x="80" y="429" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="444" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">106</text>
+<text x="88" y="444" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    (evaluationMode ? &#39;24&#39; : &#39;40&#39;)</text>
+<text x="56" y="466" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">107</text>
+<text x="88" y="466" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const edgeNode = layout[&#39;elk.spacing.edgeNode&#39;] ?? (evaluationMode ? &#39;14&#39; : &#39;24&#39;)</text>
+<rect x="80" y="473" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="488" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">108</text>
+<text x="88" y="488" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const edgeRouting = evaluationMode ? &#39;ORTHOGONAL&#39; : (layout[&#39;elk.edgeRouting&#39;] || &#39;SPLINES&#39;)</text>
+<text x="56" y="510" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">109</text>
+<text x="88" y="510" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="517" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="532" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">110</text>
+<text x="88" y="532" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const layoutOptions = {</text>
+<text x="56" y="554" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">111</text>
+<text x="88" y="554" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    &#39;elk.algorithm&#39;: layout[&#39;elk.algorithm&#39;] || &#39;layered&#39;,</text>
+<rect x="80" y="561" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="576" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">112</text>
+<text x="88" y="576" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    &#39;elk.direction&#39;: layout[&#39;elk.direction&#39;] || &#39;RIGHT&#39;,</text>
+<text x="56" y="598" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">113</text>
+<text x="88" y="598" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    &#39;elk.edgeRouting&#39;: edgeRouting,</text>
+<rect x="80" y="605" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="620" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">114</text>
+<text x="88" y="620" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    &#39;elk.layered.spacing.nodeNodeBetweenLayers&#39;: String(betweenLayers),</text>
+<text x="56" y="642" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">115</text>
+<text x="88" y="642" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    &#39;elk.spacing.edgeNode&#39;: String(edgeNode),</text>
+<rect x="80" y="649" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="664" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">116</text>
+<text x="88" y="664" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    &#39;elk.layered.nodePlacement.bk.fixedAlignment&#39;: &#39;BALANCED&#39;,</text>
+<text x="56" y="686" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">117</text>
+<text x="88" y="686" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<rect x="80" y="693" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="708" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">118</text>
+<text x="88" y="708" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="730" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">119</text>
+<text x="88" y="730" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  return {</text>
+<rect x="80" y="737" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="752" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">120</text>
+<text x="88" y="752" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    id: &#39;root&#39;,</text>
+<text x="56" y="774" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">121</text>
+<text x="88" y="774" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    layoutOptions,</text>
+<rect x="80" y="781" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="796" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">122</text>
+<text x="88" y="796" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    children: elkChildren,</text>
+<text x="56" y="818" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">123</text>
+<text x="88" y="818" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edges: elkEdges,</text>
+<rect x="80" y="825" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="840" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">124</text>
+<text x="88" y="840" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<text x="56" y="862" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">125</text>
+<text x="88" y="862" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">}</text>
+<rect x="0" y="908" width="980" height="28" fill="#0f172a"/>
+<text x="18" y="926" font-family="Menlo, Consolas, Monaco, monospace" font-size="12" fill="#94a3b8">Source: src/components/GraphView.jsx</text>
+</svg>

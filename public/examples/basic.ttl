@@ -1,0 +1,127 @@
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+#################################################################
+# Classes
+#################################################################
+
+ex:Person a owl:Class ;
+rdfs:label "Person"@en ;
+rdfs:comment "A human being."@en .
+
+ex:Student a owl:Class ;
+rdfs:subClassOf ex:Person ;
+rdfs:label "Student"@en .
+
+ex:Teacher a owl:Class ;
+rdfs:subClassOf ex:Person ;
+rdfs:label "Teacher"@en .
+
+ex:Course a owl:Class ;
+rdfs:label "Course"@en .
+
+ex:University a owl:Class ;
+rdfs:label "University"@en .
+
+ex:Address a owl:Class ;
+rdfs:label "Address"@en .
+
+ex:Enrollment a owl:Class ;
+rdfs:label "Enrollment"@en .
+
+#################################################################
+# Properties
+#################################################################
+
+ex:studiesAt a owl:ObjectProperty ;
+rdfs:domain ex:Student ;
+rdfs:range ex:University .
+
+ex:teaches a owl:ObjectProperty ;
+rdfs:domain ex:Teacher ;
+rdfs:range ex:Course .
+
+ex:enrolledIn a owl:ObjectProperty ;
+rdfs:domain ex:Student ;
+rdfs:range ex:Course .
+
+ex:hasAddress a owl:ObjectProperty ;
+rdfs:domain ex:Person ;
+rdfs:range ex:Address .
+
+ex:hasAge a owl:DatatypeProperty ;
+rdfs:domain ex:Person ;
+rdfs:range xsd:integer .
+
+ex:hasGPA a owl:DatatypeProperty ;
+rdfs:domain ex:Student ;
+rdfs:range xsd:decimal .
+
+ex:enrollmentDate a owl:DatatypeProperty ;
+rdfs:domain ex:Enrollment ;
+rdfs:range xsd:date .
+
+#################################################################
+# Individuals / Instances
+#################################################################
+
+ex:GreenUniversity a ex:University ;
+rdfs:label "Green University"@en ;
+ex:location "Dhaka"@en .
+
+ex:CS101 a ex:Course ;
+rdfs:label "Introduction to Computer Science"@en ;
+ex:courseCode "CS101"^^xsd:string ;
+ex:credit "3"^^xsd:integer .
+
+ex:SemanticWeb a ex:Course ;
+rdfs:label "Semantic Web"@en ;
+ex:courseCode "CS405"^^xsd:string ;
+ex:credit "3"^^xsd:integer ;
+ex:prerequisite ex:CS101 .
+
+ex:alice a ex:Student ;
+foaf:name "Alice Rahman"@en ;
+ex:hasAge "22"^^xsd:integer ;
+ex:hasGPA "3.75"^^xsd:decimal ;
+ex:isActive "true"^^xsd:boolean ;
+ex:studiesAt ex:GreenUniversity ;
+ex:enrolledIn ex:SemanticWeb ;
+ex:hasAddress [
+a ex:Address ;
+ex:street "Mirpur Road"@en ;
+ex:city "Dhaka"@en ;
+ex:country "Bangladesh"@en
+] .
+
+ex:bob a ex:Teacher ;
+foaf:name "Dr. Bob Smith"@en ;
+ex:hasAge "45"^^xsd:integer ;
+ex:teaches ex:SemanticWeb ;
+ex:worksAt ex:GreenUniversity .
+
+#################################################################
+# Blank Node Example
+#################################################################
+
+_:enrollment1 a ex:Enrollment ;
+ex:student ex:alice ;
+ex:course ex:SemanticWeb ;
+ex:enrollmentDate "2025-01-15"^^xsd:date ;
+ex:semester "Spring 2025"@en .
+
+#################################################################
+# RDF List Example
+#################################################################
+
+ex:SemanticWeb ex:topics (
+"RDF"^^xsd:string
+"RDFS"^^xsd:string
+"OWL"^^xsd:string
+"SPARQL"^^xsd:string
+"SHACL"^^xsd:string
+) .

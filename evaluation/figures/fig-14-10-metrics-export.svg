@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="562" viewBox="0 0 980 562">
+<rect x="0" y="0" width="980" height="562" fill="#0b1220"/>
+<rect x="0" y="0" width="980" height="46" fill="#111a2b"/>
+<text x="18" y="29" font-family="Menlo, Consolas, Monaco, monospace" font-size="15" fill="#e2e8f0">Figure 17.10  Metrics Export Merge Logic (ControllersPanel.jsx:33-52)</text>
+<rect x="0" y="46" width="80" height="488" fill="#0f172a"/>
+<text x="56" y="70" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">33</text>
+<text x="88" y="70" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  function handleExportMetrics() {</text>
+<rect x="80" y="77" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="92" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">34</text>
+<text x="88" y="92" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    if (!metrics) return</text>
+<text x="56" y="114" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">35</text>
+<text x="88" y="114" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const mergedMetrics = {</text>
+<rect x="80" y="121" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="136" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">36</text>
+<text x="88" y="136" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      ...metrics,</text>
+<text x="56" y="158" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">37</text>
+<text x="88" y="158" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      meta: { ...(metrics.meta || {}), renderStats: renderStats || null },</text>
+<rect x="80" y="165" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="180" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">38</text>
+<text x="88" y="180" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    }</text>
+<text x="56" y="202" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">39</text>
+<text x="88" y="202" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const base = (graphTitle || metrics?.meta?.title || &#39;rdf-graph&#39;)</text>
+<rect x="80" y="209" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="224" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">40</text>
+<text x="88" y="224" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .toString()</text>
+<text x="56" y="246" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">41</text>
+<text x="88" y="246" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .trim()</text>
+<rect x="80" y="253" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="268" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">42</text>
+<text x="88" y="268" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .replace(/\s+/g, &#39;-&#39;)</text>
+<text x="56" y="290" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">43</text>
+<text x="88" y="290" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      .toLowerCase()</text>
+<rect x="80" y="297" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="312" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">44</text>
+<text x="88" y="312" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const filenameBase = `${base}-metrics`</text>
+<text x="56" y="334" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">45</text>
+<text x="88" y="334" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    if (metricsFormat === &#39;csv&#39;) {</text>
+<rect x="80" y="341" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="356" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">46</text>
+<text x="88" y="356" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const csv = metricsToCsv(mergedMetrics)</text>
+<text x="56" y="378" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">47</text>
+<text x="88" y="378" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      exportTextFile(csv, `${filenameBase}.csv`, &#39;text/csv;charset=utf-8&#39;)</text>
+<rect x="80" y="385" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="400" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">48</text>
+<text x="88" y="400" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    } else {</text>
+<text x="56" y="422" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">49</text>
+<text x="88" y="422" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const json = JSON.stringify(mergedMetrics, null, 2)</text>
+<rect x="80" y="429" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="444" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">50</text>
+<text x="88" y="444" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      exportTextFile(json, `${filenameBase}.json`, &#39;application/json;charset=utf-8&#39;)</text>
+<text x="56" y="466" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">51</text>
+<text x="88" y="466" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    }</text>
+<rect x="80" y="473" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="488" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">52</text>
+<text x="88" y="488" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<rect x="0" y="534" width="980" height="28" fill="#0f172a"/>
+<text x="18" y="552" font-family="Menlo, Consolas, Monaco, monospace" font-size="12" fill="#94a3b8">Source: src/components/ControllersPanel.jsx</text>
+</svg>

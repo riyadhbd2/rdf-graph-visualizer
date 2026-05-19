@@ -1,0 +1,350 @@
+@prefix ex:   <http://example.org/kg/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:n1 rdfs:label "Node 1" .
+ex:n2 rdfs:label "Node 2" .
+ex:n3 rdfs:label "Node 3" .
+ex:n4 rdfs:label "Node 4" .
+ex:n5 rdfs:label "Node 5" .
+ex:n6 rdfs:label "Node 6" .
+ex:n7 rdfs:label "Node 7" .
+ex:n8 rdfs:label "Node 8" .
+ex:n9 rdfs:label "Node 9" .
+ex:n10 rdfs:label "Node 10" .
+ex:n11 rdfs:label "Node 11" .
+ex:n12 rdfs:label "Node 12" .
+ex:n13 rdfs:label "Node 13" .
+ex:n14 rdfs:label "Node 14" .
+ex:n15 rdfs:label "Node 15" .
+ex:n16 rdfs:label "Node 16" .
+ex:n17 rdfs:label "Node 17" .
+ex:n18 rdfs:label "Node 18" .
+ex:n19 rdfs:label "Node 19" .
+ex:n20 rdfs:label "Node 20" .
+ex:n21 rdfs:label "Node 21" .
+ex:n22 rdfs:label "Node 22" .
+ex:n23 rdfs:label "Node 23" .
+ex:n24 rdfs:label "Node 24" .
+ex:n25 rdfs:label "Node 25" .
+ex:n26 rdfs:label "Node 26" .
+ex:n27 rdfs:label "Node 27" .
+ex:n28 rdfs:label "Node 28" .
+ex:n29 rdfs:label "Node 29" .
+ex:n30 rdfs:label "Node 30" .
+ex:n31 rdfs:label "Node 31" .
+ex:n32 rdfs:label "Node 32" .
+ex:n33 rdfs:label "Node 33" .
+ex:n34 rdfs:label "Node 34" .
+ex:n35 rdfs:label "Node 35" .
+ex:n36 rdfs:label "Node 36" .
+ex:n37 rdfs:label "Node 37" .
+ex:n38 rdfs:label "Node 38" .
+ex:n39 rdfs:label "Node 39" .
+ex:n40 rdfs:label "Node 40" .
+ex:n41 rdfs:label "Node 41" .
+ex:n42 rdfs:label "Node 42" .
+ex:n43 rdfs:label "Node 43" .
+ex:n44 rdfs:label "Node 44" .
+ex:n45 rdfs:label "Node 45" .
+ex:n46 rdfs:label "Node 46" .
+ex:n47 rdfs:label "Node 47" .
+ex:n48 rdfs:label "Node 48" .
+ex:n49 rdfs:label "Node 49" .
+ex:n50 rdfs:label "Node 50" .
+ex:n51 rdfs:label "Node 51" .
+ex:n52 rdfs:label "Node 52" .
+ex:n53 rdfs:label "Node 53" .
+ex:n54 rdfs:label "Node 54" .
+ex:n55 rdfs:label "Node 55" .
+ex:n56 rdfs:label "Node 56" .
+ex:n57 rdfs:label "Node 57" .
+ex:n58 rdfs:label "Node 58" .
+ex:n59 rdfs:label "Node 59" .
+ex:n60 rdfs:label "Node 60" .
+ex:n61 rdfs:label "Node 61" .
+ex:n62 rdfs:label "Node 62" .
+ex:n63 rdfs:label "Node 63" .
+ex:n64 rdfs:label "Node 64" .
+ex:n65 rdfs:label "Node 65" .
+ex:n66 rdfs:label "Node 66" .
+ex:n67 rdfs:label "Node 67" .
+ex:n68 rdfs:label "Node 68" .
+ex:n69 rdfs:label "Node 69" .
+ex:n70 rdfs:label "Node 70" .
+ex:n71 rdfs:label "Node 71" .
+ex:n72 rdfs:label "Node 72" .
+ex:n73 rdfs:label "Node 73" .
+ex:n74 rdfs:label "Node 74" .
+ex:n75 rdfs:label "Node 75" .
+ex:n76 rdfs:label "Node 76" .
+ex:n77 rdfs:label "Node 77" .
+ex:n78 rdfs:label "Node 78" .
+ex:n79 rdfs:label "Node 79" .
+ex:n80 rdfs:label "Node 80" .
+ex:n81 rdfs:label "Node 81" .
+ex:n82 rdfs:label "Node 82" .
+ex:n83 rdfs:label "Node 83" .
+ex:n84 rdfs:label "Node 84" .
+ex:n85 rdfs:label "Node 85" .
+ex:n86 rdfs:label "Node 86" .
+ex:n87 rdfs:label "Node 87" .
+ex:n88 rdfs:label "Node 88" .
+ex:n89 rdfs:label "Node 89" .
+ex:n90 rdfs:label "Node 90" .
+ex:n91 rdfs:label "Node 91" .
+ex:n92 rdfs:label "Node 92" .
+ex:n93 rdfs:label "Node 93" .
+ex:n94 rdfs:label "Node 94" .
+ex:n95 rdfs:label "Node 95" .
+ex:n96 rdfs:label "Node 96" .
+ex:n97 rdfs:label "Node 97" .
+ex:n98 rdfs:label "Node 98" .
+ex:n99 rdfs:label "Node 99" .
+ex:n100 rdfs:label "Node 100" .
+
+ex:n1 ex:relatedTo ex:n2 .
+ex:n1 ex:sameTopic ex:n10 .
+ex:n1 ex:connectedTo ex:n46 .
+ex:n2 ex:relatedTo ex:n3 .
+ex:n2 ex:connectedTo ex:n77 .
+ex:n2 ex:relatedTo ex:n100 .
+ex:n3 ex:relatedTo ex:n4 .
+ex:n3 ex:relatedTo ex:n71 .
+ex:n4 ex:relatedTo ex:n5 .
+ex:n4 ex:connectedTo ex:n10 .
+ex:n4 ex:connectedTo ex:n53 .
+ex:n4 ex:relatedTo ex:n73 .
+ex:n5 ex:about ex:n1 .
+ex:n5 ex:relatedTo ex:n6 .
+ex:n5 ex:connectedTo ex:n29 .
+ex:n5 ex:relatedTo ex:n35 .
+ex:n5 ex:sameTopic ex:n69 .
+ex:n5 ex:mentions ex:n83 .
+ex:n6 ex:relatedTo ex:n7 .
+ex:n6 ex:connectedTo ex:n8 .
+ex:n6 ex:about ex:n66 .
+ex:n6 ex:relatedTo ex:n76 .
+ex:n7 ex:relatedTo ex:n8 .
+ex:n7 ex:connectedTo ex:n67 .
+ex:n8 ex:relatedTo ex:n9 .
+ex:n8 ex:connectedTo ex:n77 .
+ex:n9 ex:relatedTo ex:n10 .
+ex:n9 ex:connectedTo ex:n59 .
+ex:n9 ex:mentions ex:n78 .
+ex:n9 ex:sameTopic ex:n92 .
+ex:n10 ex:relatedTo ex:n11 .
+ex:n11 ex:relatedTo ex:n12 .
+ex:n11 ex:connectedTo ex:n47 .
+ex:n12 ex:relatedTo ex:n13 .
+ex:n13 ex:relatedTo ex:n14 .
+ex:n13 ex:connectedTo ex:n62 .
+ex:n14 ex:relatedTo ex:n15 .
+ex:n14 ex:sameTopic ex:n29 .
+ex:n14 ex:about ex:n65 .
+ex:n14 ex:mentions ex:n89 .
+ex:n14 ex:sameTopic ex:n90 .
+ex:n15 ex:relatedTo ex:n16 .
+ex:n15 ex:sameTopic ex:n28 .
+ex:n16 ex:relatedTo ex:n17 .
+ex:n17 ex:relatedTo ex:n18 .
+ex:n18 ex:about ex:n6 .
+ex:n18 ex:relatedTo ex:n19 .
+ex:n18 ex:mentions ex:n48 .
+ex:n19 ex:relatedTo ex:n20 .
+ex:n19 ex:relatedTo ex:n32 .
+ex:n19 ex:about ex:n38 .
+ex:n20 ex:relatedTo ex:n21 .
+ex:n20 ex:about ex:n74 .
+ex:n21 ex:relatedTo ex:n22 .
+ex:n21 ex:relatedTo ex:n59 .
+ex:n22 ex:relatedTo ex:n23 .
+ex:n22 ex:sameTopic ex:n39 .
+ex:n23 ex:mentions ex:n10 .
+ex:n23 ex:relatedTo ex:n24 .
+ex:n24 ex:relatedTo ex:n25 .
+ex:n24 ex:connectedTo ex:n52 .
+ex:n25 ex:relatedTo ex:n26 .
+ex:n25 ex:about ex:n34 .
+ex:n25 ex:about ex:n37 .
+ex:n26 ex:relatedTo ex:n27 .
+ex:n27 ex:relatedTo ex:n28 .
+ex:n27 ex:relatedTo ex:n32 .
+ex:n28 ex:relatedTo ex:n29 .
+ex:n29 ex:relatedTo ex:n30 .
+ex:n29 ex:relatedTo ex:n71 .
+ex:n29 ex:about ex:n96 .
+ex:n30 ex:relatedTo ex:n31 .
+ex:n30 ex:about ex:n84 .
+ex:n30 ex:sameTopic ex:n90 .
+ex:n31 ex:sameTopic ex:n9 .
+ex:n31 ex:about ex:n23 .
+ex:n31 ex:relatedTo ex:n32 .
+ex:n31 ex:sameTopic ex:n38 .
+ex:n31 ex:mentions ex:n55 .
+ex:n32 ex:relatedTo ex:n1 .
+ex:n32 ex:relatedTo ex:n33 .
+ex:n33 ex:connectedTo ex:n4 .
+ex:n33 ex:relatedTo ex:n34 .
+ex:n34 ex:relatedTo ex:n35 .
+ex:n35 ex:mentions ex:n2 .
+ex:n35 ex:relatedTo ex:n36 .
+ex:n36 ex:about ex:n18 .
+ex:n36 ex:relatedTo ex:n37 .
+ex:n37 ex:relatedTo ex:n38 .
+ex:n37 ex:relatedTo ex:n57 .
+ex:n38 ex:mentions ex:n30 .
+ex:n38 ex:relatedTo ex:n39 .
+ex:n38 ex:about ex:n74 .
+ex:n39 ex:mentions ex:n14 .
+ex:n39 ex:relatedTo ex:n40 .
+ex:n39 ex:connectedTo ex:n65 .
+ex:n40 ex:connectedTo ex:n3 .
+ex:n40 ex:relatedTo ex:n41 .
+ex:n40 ex:relatedTo ex:n65 .
+ex:n40 ex:sameTopic ex:n69 .
+ex:n40 ex:sameTopic ex:n92 .
+ex:n41 ex:relatedTo ex:n42 .
+ex:n42 ex:relatedTo ex:n43 .
+ex:n42 ex:connectedTo ex:n97 .
+ex:n42 ex:relatedTo ex:n99 .
+ex:n43 ex:relatedTo ex:n44 .
+ex:n44 ex:relatedTo ex:n1 .
+ex:n44 ex:sameTopic ex:n25 .
+ex:n44 ex:relatedTo ex:n45 .
+ex:n45 ex:relatedTo ex:n46 .
+ex:n46 ex:relatedTo ex:n47 .
+ex:n46 ex:mentions ex:n93 .
+ex:n47 ex:relatedTo ex:n48 .
+ex:n48 ex:connectedTo ex:n15 .
+ex:n48 ex:relatedTo ex:n42 .
+ex:n48 ex:relatedTo ex:n49 .
+ex:n49 ex:relatedTo ex:n50 .
+ex:n50 ex:relatedTo ex:n51 .
+ex:n50 ex:about ex:n52 .
+ex:n50 ex:connectedTo ex:n83 .
+ex:n51 ex:relatedTo ex:n52 .
+ex:n52 ex:relatedTo ex:n53 .
+ex:n53 ex:mentions ex:n18 .
+ex:n53 ex:relatedTo ex:n22 .
+ex:n53 ex:relatedTo ex:n54 .
+ex:n54 ex:sameTopic ex:n1 .
+ex:n54 ex:about ex:n31 .
+ex:n54 ex:relatedTo ex:n55 .
+ex:n55 ex:relatedTo ex:n56 .
+ex:n55 ex:mentions ex:n77 .
+ex:n56 ex:relatedTo ex:n15 .
+ex:n56 ex:relatedTo ex:n57 .
+ex:n56 ex:sameTopic ex:n70 .
+ex:n57 ex:relatedTo ex:n58 .
+ex:n58 ex:relatedTo ex:n59 .
+ex:n58 ex:about ex:n62 .
+ex:n58 ex:about ex:n87 .
+ex:n59 ex:relatedTo ex:n60 .
+ex:n60 ex:relatedTo ex:n61 .
+ex:n61 ex:relatedTo ex:n62 .
+ex:n62 ex:connectedTo ex:n22 .
+ex:n62 ex:relatedTo ex:n63 .
+ex:n63 ex:about ex:n13 .
+ex:n63 ex:about ex:n56 .
+ex:n63 ex:sameTopic ex:n57 .
+ex:n63 ex:relatedTo ex:n58 .
+ex:n63 ex:relatedTo ex:n64 .
+ex:n64 ex:relatedTo ex:n38 .
+ex:n64 ex:relatedTo ex:n65 .
+ex:n64 ex:about ex:n91 .
+ex:n65 ex:sameTopic ex:n2 .
+ex:n65 ex:relatedTo ex:n66 .
+ex:n65 ex:about ex:n69 .
+ex:n66 ex:sameTopic ex:n46 .
+ex:n66 ex:relatedTo ex:n59 .
+ex:n66 ex:relatedTo ex:n67 .
+ex:n67 ex:relatedTo ex:n68 .
+ex:n68 ex:sameTopic ex:n11 .
+ex:n68 ex:relatedTo ex:n69 .
+ex:n68 ex:about ex:n79 .
+ex:n69 ex:mentions ex:n30 .
+ex:n69 ex:relatedTo ex:n70 .
+ex:n70 ex:mentions ex:n9 .
+ex:n70 ex:relatedTo ex:n71 .
+ex:n70 ex:connectedTo ex:n79 .
+ex:n71 ex:about ex:n21 .
+ex:n71 ex:relatedTo ex:n55 .
+ex:n71 ex:relatedTo ex:n72 .
+ex:n71 ex:sameTopic ex:n85 .
+ex:n72 ex:mentions ex:n35 .
+ex:n72 ex:mentions ex:n49 .
+ex:n72 ex:relatedTo ex:n73 .
+ex:n73 ex:relatedTo ex:n62 .
+ex:n73 ex:sameTopic ex:n68 .
+ex:n73 ex:relatedTo ex:n74 .
+ex:n74 ex:connectedTo ex:n10 .
+ex:n74 ex:relatedTo ex:n47 .
+ex:n74 ex:mentions ex:n62 .
+ex:n74 ex:relatedTo ex:n75 .
+ex:n74 ex:relatedTo ex:n82 .
+ex:n75 ex:connectedTo ex:n29 .
+ex:n75 ex:relatedTo ex:n76 .
+ex:n76 ex:mentions ex:n5 .
+ex:n76 ex:relatedTo ex:n77 .
+ex:n77 ex:about ex:n52 .
+ex:n77 ex:relatedTo ex:n78 .
+ex:n78 ex:connectedTo ex:n31 .
+ex:n78 ex:relatedTo ex:n79 .
+ex:n78 ex:relatedTo ex:n80 .
+ex:n79 ex:about ex:n8 .
+ex:n79 ex:mentions ex:n61 .
+ex:n79 ex:mentions ex:n75 .
+ex:n79 ex:relatedTo ex:n80 .
+ex:n79 ex:about ex:n87 .
+ex:n80 ex:relatedTo ex:n81 .
+ex:n80 ex:sameTopic ex:n97 .
+ex:n81 ex:sameTopic ex:n39 .
+ex:n81 ex:mentions ex:n44 .
+ex:n81 ex:relatedTo ex:n55 .
+ex:n81 ex:relatedTo ex:n82 .
+ex:n82 ex:sameTopic ex:n66 .
+ex:n82 ex:relatedTo ex:n83 .
+ex:n83 ex:relatedTo ex:n84 .
+ex:n83 ex:sameTopic ex:n90 .
+ex:n84 ex:sameTopic ex:n27 .
+ex:n84 ex:relatedTo ex:n85 .
+ex:n84 ex:connectedTo ex:n97 .
+ex:n85 ex:about ex:n48 .
+ex:n85 ex:relatedTo ex:n86 .
+ex:n86 ex:sameTopic ex:n32 .
+ex:n86 ex:sameTopic ex:n76 .
+ex:n86 ex:mentions ex:n77 .
+ex:n86 ex:relatedTo ex:n87 .
+ex:n86 ex:relatedTo ex:n92 .
+ex:n87 ex:relatedTo ex:n88 .
+ex:n88 ex:relatedTo ex:n89 .
+ex:n88 ex:sameTopic ex:n96 .
+ex:n89 ex:sameTopic ex:n11 .
+ex:n89 ex:connectedTo ex:n14 .
+ex:n89 ex:relatedTo ex:n25 .
+ex:n89 ex:relatedTo ex:n90 .
+ex:n90 ex:mentions ex:n89 .
+ex:n90 ex:relatedTo ex:n91 .
+ex:n91 ex:relatedTo ex:n3 .
+ex:n91 ex:connectedTo ex:n6 .
+ex:n91 ex:connectedTo ex:n51 .
+ex:n91 ex:connectedTo ex:n53 .
+ex:n91 ex:mentions ex:n86 .
+ex:n91 ex:relatedTo ex:n92 .
+ex:n91 ex:about ex:n93 .
+ex:n92 ex:relatedTo ex:n93 .
+ex:n93 ex:mentions ex:n39 .
+ex:n93 ex:relatedTo ex:n94 .
+ex:n94 ex:relatedTo ex:n95 .
+ex:n95 ex:sameTopic ex:n83 .
+ex:n95 ex:mentions ex:n90 .
+ex:n95 ex:relatedTo ex:n96 .
+ex:n96 ex:relatedTo ex:n97 .
+ex:n97 ex:connectedTo ex:n23 .
+ex:n97 ex:relatedTo ex:n98 .
+ex:n98 ex:about ex:n20 .
+ex:n98 ex:relatedTo ex:n99 .
+ex:n99 ex:relatedTo ex:n100 .
+ex:n100 ex:relatedTo ex:n1 .
+ex:n100 ex:mentions ex:n28 .
+ex:n100 ex:about ex:n60 .

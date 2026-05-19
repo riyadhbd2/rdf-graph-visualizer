@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    {
+      "id": "http://example.org/alice",
+      "label": "Alice",
+      "type": "foaf:Person"
+    },
+    {
+      "id": "http://example.org/bob",
+      "label": "Bob",
+      "type": "foaf:Person"
+    },
+    {
+      "id": "http://example.org/carol",
+      "label": "Carol",
+      "type": "foaf:Person"
+    }
+  ],
+  "edges": [
+    {
+      "source": "http://example.org/alice",
+      "target": "http://example.org/bob",
+      "predicate": "foaf:knows"
+    },
+    {
+      "source": "http://example.org/alice",
+      "target": "http://example.org/carol",
+      "predicate": "foaf:knows"
+    },
+    {
+      "source": "http://example.org/bob",
+      "target": "http://example.org/carol",
+      "predicate": "foaf:knows"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1904" viewBox="0 0 980 1904">
+<rect x="0" y="0" width="980" height="1904" fill="#0b1220"/>
+<rect x="0" y="0" width="980" height="46" fill="#111a2b"/>
+<text x="18" y="29" font-family="Menlo, Consolas, Monaco, monospace" font-size="15" fill="#e2e8f0">Figure 17.8  Compactness Metric Computation (metrics.js:121-201)</text>
+<rect x="0" y="46" width="80" height="1830" fill="#0f172a"/>
+<text x="56" y="70" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">121</text>
+<text x="88" y="70" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">export function computeGraphMetrics(nodes = [], edges = [], options = {}) {</text>
+<rect x="80" y="77" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="92" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">122</text>
+<text x="88" y="92" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  if (!Array.isArray(nodes) || nodes.length === 0) return null</text>
+<text x="56" y="114" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">123</text>
+<text x="88" y="114" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="121" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="136" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">124</text>
+<text x="88" y="136" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const bounds = computeBounds(nodes)</text>
+<text x="56" y="158" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">125</text>
+<text x="88" y="158" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const nodeCount = nodes.length</text>
+<rect x="80" y="165" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="180" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">126</text>
+<text x="88" y="180" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const edgeCount = Array.isArray(edges) ? edges.length : 0</text>
+<text x="56" y="202" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">127</text>
+<text x="88" y="202" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const nodeMap = new Map(nodes.map(node =&gt; [node.id, node]))</text>
+<rect x="80" y="209" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="224" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">128</text>
+<text x="88" y="224" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="246" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">129</text>
+<text x="88" y="246" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const lengths = edgeLengths(edges, nodeMap)</text>
+<rect x="80" y="253" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="268" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">130</text>
+<text x="88" y="268" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const lengthStats = statsFrom(lengths)</text>
+<text x="56" y="290" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">131</text>
+<text x="88" y="290" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="297" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="312" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">132</text>
+<text x="88" y="312" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const nodeAreaTotal = nodes.reduce((acc, node) =&gt; {</text>
+<text x="56" y="334" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">133</text>
+<text x="88" y="334" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const r = radiusOf(node)</text>
+<rect x="80" y="341" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="356" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">134</text>
+<text x="88" y="356" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    if (!Number.isFinite(r) || r &lt;= 0) return acc</text>
+<text x="56" y="378" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">135</text>
+<text x="88" y="378" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    return acc + Math.PI * r * r</text>
+<rect x="80" y="385" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="400" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">136</text>
+<text x="88" y="400" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }, 0)</text>
+<text x="56" y="422" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">137</text>
+<text x="88" y="422" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="429" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="444" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">138</text>
+<text x="88" y="444" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const area = bounds?.area ?? 0</text>
+<text x="56" y="466" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">139</text>
+<text x="88" y="466" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const density = area &gt; 0 ? nodeCount / area : null</text>
+<rect x="80" y="473" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="488" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">140</text>
+<text x="88" y="488" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const aspectRatio = bounds &amp;&amp; bounds.height &gt; 0 ? bounds.width / bounds.height : null</text>
+<text x="56" y="510" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">141</text>
+<text x="88" y="510" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const whitespaceRatio = area &gt; 0 ? Math.max(0, 1 - Math.min(1, nodeAreaTotal / area)) : null</text>
+<rect x="80" y="517" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="532" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">142</text>
+<text x="88" y="532" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="554" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">143</text>
+<text x="88" y="554" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const maxCrossingEdges = options.maxCrossingEdges ?? DEFAULT_MAX_EDGE_CROSSINGS</text>
+<rect x="80" y="561" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="576" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">144</text>
+<text x="88" y="576" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  let edgeCrossings = null</text>
+<text x="56" y="598" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">145</text>
+<text x="88" y="598" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  let edgeCrossingsNote = null</text>
+<rect x="80" y="605" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="620" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">146</text>
+<text x="88" y="620" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  if (edgeCount &gt; 0 &amp;&amp; edgeCount &lt;= maxCrossingEdges) {</text>
+<text x="56" y="642" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">147</text>
+<text x="88" y="642" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    const segments = edges.reduce((acc, edge) =&gt; {</text>
+<rect x="80" y="649" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="664" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">148</text>
+<text x="88" y="664" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const src = nodeMap.get(edge.source)</text>
+<text x="56" y="686" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">149</text>
+<text x="88" y="686" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      const tgt = nodeMap.get(edge.target)</text>
+<rect x="80" y="693" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="708" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">150</text>
+<text x="88" y="708" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      if (!src || !tgt) return acc</text>
+<text x="56" y="730" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">151</text>
+<text x="88" y="730" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      acc.push({</text>
+<rect x="80" y="737" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="752" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">152</text>
+<text x="88" y="752" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        sourceId: edge.source,</text>
+<text x="56" y="774" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">153</text>
+<text x="88" y="774" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        targetId: edge.target,</text>
+<rect x="80" y="781" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="796" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">154</text>
+<text x="88" y="796" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        a: centerOf(src),</text>
+<text x="56" y="818" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">155</text>
+<text x="88" y="818" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        b: centerOf(tgt),</text>
+<rect x="80" y="825" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="840" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">156</text>
+<text x="88" y="840" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      })</text>
+<text x="56" y="862" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">157</text>
+<text x="88" y="862" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      return acc</text>
+<rect x="80" y="869" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="884" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">158</text>
+<text x="88" y="884" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    }, [])</text>
+<text x="56" y="906" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">159</text>
+<text x="88" y="906" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edgeCrossings = computeEdgeCrossings(segments)</text>
+<rect x="80" y="913" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="928" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">160</text>
+<text x="88" y="928" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  } else if (edgeCount &gt; maxCrossingEdges) {</text>
+<text x="56" y="950" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">161</text>
+<text x="88" y="950" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edgeCrossingsNote = `skipped (edge count &gt; ${maxCrossingEdges})`</text>
+<rect x="80" y="957" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="972" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">162</text>
+<text x="88" y="972" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<text x="56" y="994" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">163</text>
+<text x="88" y="994" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<rect x="80" y="1001" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1016" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">164</text>
+<text x="88" y="1016" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  const maxOverlapNodes = options.maxOverlapNodes ?? DEFAULT_MAX_NODE_OVERLAPS</text>
+<text x="56" y="1038" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">165</text>
+<text x="88" y="1038" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  let nodeOverlaps = null</text>
+<rect x="80" y="1045" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1060" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">166</text>
+<text x="88" y="1060" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  let nodeOverlapsNote = null</text>
+<text x="56" y="1082" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">167</text>
+<text x="88" y="1082" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  if (nodeCount &gt; 0 &amp;&amp; nodeCount &lt;= maxOverlapNodes) {</text>
+<rect x="80" y="1089" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1104" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">168</text>
+<text x="88" y="1104" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    nodeOverlaps = computeNodeOverlaps(nodes)</text>
+<text x="56" y="1126" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">169</text>
+<text x="88" y="1126" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  } else if (nodeCount &gt; maxOverlapNodes) {</text>
+<rect x="80" y="1133" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1148" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">170</text>
+<text x="88" y="1148" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    nodeOverlapsNote = `skipped (node count &gt; ${maxOverlapNodes})`</text>
+<text x="56" y="1170" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">171</text>
+<text x="88" y="1170" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<rect x="80" y="1177" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1192" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">172</text>
+<text x="88" y="1192" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve"></text>
+<text x="56" y="1214" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">173</text>
+<text x="88" y="1214" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  return {</text>
+<rect x="80" y="1221" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1236" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">174</text>
+<text x="88" y="1236" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    version: 1,</text>
+<text x="56" y="1258" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">175</text>
+<text x="88" y="1258" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    nodeCount,</text>
+<rect x="80" y="1265" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1280" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">176</text>
+<text x="88" y="1280" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edgeCount,</text>
+<text x="56" y="1302" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">177</text>
+<text x="88" y="1302" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    bounds: bounds</text>
+<rect x="80" y="1309" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1324" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">178</text>
+<text x="88" y="1324" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      ? {</text>
+<text x="56" y="1346" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">179</text>
+<text x="88" y="1346" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          xMin: safeNumber(bounds.xMin),</text>
+<rect x="80" y="1353" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1368" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">180</text>
+<text x="88" y="1368" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          yMin: safeNumber(bounds.yMin),</text>
+<text x="56" y="1390" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">181</text>
+<text x="88" y="1390" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          xMax: safeNumber(bounds.xMax),</text>
+<rect x="80" y="1397" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1412" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">182</text>
+<text x="88" y="1412" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          yMax: safeNumber(bounds.yMax),</text>
+<text x="56" y="1434" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">183</text>
+<text x="88" y="1434" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          width: safeNumber(bounds.width),</text>
+<rect x="80" y="1441" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1456" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">184</text>
+<text x="88" y="1456" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          height: safeNumber(bounds.height),</text>
+<text x="56" y="1478" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">185</text>
+<text x="88" y="1478" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">          area: safeNumber(bounds.area),</text>
+<rect x="80" y="1485" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1500" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">186</text>
+<text x="88" y="1500" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">        }</text>
+<text x="56" y="1522" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">187</text>
+<text x="88" y="1522" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">      : null,</text>
+<rect x="80" y="1529" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1544" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">188</text>
+<text x="88" y="1544" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    density: safeNumber(density),</text>
+<text x="56" y="1566" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">189</text>
+<text x="88" y="1566" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    aspectRatio: safeNumber(aspectRatio),</text>
+<rect x="80" y="1573" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1588" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">190</text>
+<text x="88" y="1588" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    nodeAreaTotal: safeNumber(nodeAreaTotal),</text>
+<text x="56" y="1610" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">191</text>
+<text x="88" y="1610" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    whitespaceRatio: safeNumber(whitespaceRatio),</text>
+<rect x="80" y="1617" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1632" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">192</text>
+<text x="88" y="1632" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    avgEdgeLength: safeNumber(lengthStats.avg),</text>
+<text x="56" y="1654" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">193</text>
+<text x="88" y="1654" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    medianEdgeLength: safeNumber(lengthStats.median),</text>
+<rect x="80" y="1661" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1676" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">194</text>
+<text x="88" y="1676" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edgeLengthStdDev: safeNumber(lengthStats.stdDev),</text>
+<text x="56" y="1698" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">195</text>
+<text x="88" y="1698" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    minEdgeLength: safeNumber(lengthStats.min),</text>
+<rect x="80" y="1705" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1720" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">196</text>
+<text x="88" y="1720" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    maxEdgeLength: safeNumber(lengthStats.max),</text>
+<text x="56" y="1742" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">197</text>
+<text x="88" y="1742" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edgeCrossings,</text>
+<rect x="80" y="1749" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1764" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">198</text>
+<text x="88" y="1764" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    edgeCrossingsNote,</text>
+<text x="56" y="1786" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">199</text>
+<text x="88" y="1786" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    nodeOverlaps,</text>
+<rect x="80" y="1793" width="900" height="22" fill="#0f1a2f" opacity="0.35"/>
+<text x="56" y="1808" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">200</text>
+<text x="88" y="1808" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">    nodeOverlapsNote,</text>
+<text x="56" y="1830" text-anchor="end" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#64748b">201</text>
+<text x="88" y="1830" font-family="Menlo, Consolas, Monaco, monospace" font-size="14" fill="#cbd5e1" xml:space="preserve">  }</text>
+<rect x="0" y="1876" width="980" height="28" fill="#0f172a"/>
+<text x="18" y="1894" font-family="Menlo, Consolas, Monaco, monospace" font-size="12" fill="#94a3b8">Source: src/lib/metrics.js</text>
+</svg>
